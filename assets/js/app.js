@@ -399,6 +399,9 @@
     button.dataset.season = String(season.number);
     button.dataset.episode = String(episode.number);
 
+    const subtitle =
+      [episode.duration, episode.drive].filter(Boolean).join(" · ") || "";
+
     const thumbStyle =
       "--h:" + hue +
       (image
@@ -414,9 +417,7 @@
       "</span>" +
       '<span class="ep__body">' +
         '<span class="ep__title">' + esc(episode.title) + "</span>" +
-        '<span class="ep__sub">' +
-          esc([episode.duration, episode.drive].filter(Boolean).join(" · ") || "Sin datos") +
-        "</span>" +
+        (subtitle ? '<span class="ep__sub">' + esc(subtitle) + "</span>" : "") +
       "</span>" +
       (seen ? '<span class="ep__flag">Visto</span>' : "") +
       (playable ? "" : '<span class="ep__flag ep__flag--warn">Sin enlace</span>');

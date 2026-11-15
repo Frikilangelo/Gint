@@ -1,27 +1,13 @@
 /*
  * GINT · CATÁLOGO
  * ---------------------------------------------------------------
- * Aquí se define todo lo que aparece en el menú. No hace falta tocar
- * ningún otro archivo para añadir series, temporadas o episodios.
+ * Generado a partir de las cuatro carpetas públicas de Google Drive
+ * (cuenta Gintama111111111). Cada entrada es un episodio:
  *
- * Cada episodio necesita el enlace de Google Drive del capítulo.
- * Sirve cualquier enlace de archivo:
+ *   { number: 12, title: "Título del capítulo",
+ *     driveId: "https://drive.google.com/file/d/ID/view?usp=drive_link" }
  *
- *   https://drive.google.com/file/d/1ZiHyeXTJ_jTqHoIUIH_gMmQxHVhN0J5f/view?usp=drive_link
- *
- * También puedes pegar sólo el ID (1ZiHyeXTJ_jTqHoIUIH_gMmQxHVhN0J5f).
- * Da igual de cuál de las tres cuentas venga el archivo: lo único
- * importante es que tanto la carpeta como los archivos estén
- * compartidos como "Cualquier persona con el enlace" (Lector),
- * porque el reproductor entra sin iniciar sesión.
- *
- * Carpetas de las temporadas (referencia):
- *   Temporada 1: https://drive.google.com/drive/folders/135fgSXbXNnnMy7pR1kXY5MOz3xhpFJJF
- *   Temporada 2: https://drive.google.com/drive/folders/1toT8dJlpGUFd-ViX8px11Jl2pHpRDFgn
- *   Temporada 3: https://drive.google.com/drive/folders/1u0YxUaWVpbmq2onDB-m393tLuJ8wX2dP
- *   Temporada 4: https://drive.google.com/drive/folders/1hTYd8bG6CbvxuFTiM21F8ltMCh301JvQ
- *
- * Campos de un episodio:
+ * Campos admitidos:
  *   number    número del episodio                        (obligatorio)
  *   title     título visible                             (opcional)
  *   driveId   enlace o ID de Google Drive                (obligatorio para reproducir)
@@ -29,14 +15,12 @@
  *   drive     cuenta que lo aloja, ej. "Gintama111111111" (opcional, informativo)
  *   thumb     URL de miniatura propia                    (opcional)
  *
- * Ejemplo de un episodio completo:
+ * Los enlaces funcionan porque los archivos están compartidos como
+ * "Cualquier persona con el enlace" (Lector): el reproductor entra sin
+ * iniciar sesión. Si un archivo se pone en privado, deja de verse.
  *
- *   { number: 1, title: "Episodio 1", duration: "24 min",
- *     drive: "Gintama111111111",
- *     driveId: "https://drive.google.com/file/d/1ZiHyeXTJ_jTqHoIUIH_gMmQxHVhN0J5f/view?usp=drive_link" }
- *
- * Si un episodio se queda sin driveId, aparece como "Sin enlace"
- * y no se puede reproducir (así puedes ir rellenando poco a poco).
+ * La numeración es la original de la serie y continúa de una temporada
+ * a la siguiente (la temporada 2 empieza en el capítulo 50).
  * ---------------------------------------------------------------
  */
 
@@ -55,23 +39,226 @@ window.GINT_CATALOG = {
         {
           number: 1,
           title: "Temporada 1",
-          episodes: []
+          episodes: [
+            { number: 1, title: "Caps. 1-2 · ¡Oye! ¿Tienes al menos un alma plateada", driveId: "1MvgSUW0YMfCULCd4KobRj3OKpYyv-Z90" },
+            { number: 3, title: "No hay tipos malos con la permanente natural", driveId: "1PgcnE3lNYGHVt5OPpFSUbCytOLPLnIRb" },
+            { number: 4, title: "Ten cuidado, la Jump a veces sale los sábados", driveId: "1I82Cpx0MGzS8EFp4O33evNApu1NLSwb_" },
+            { number: 5, title: "Haz amigos a los que puedas llamar por apodos aunque seas un vejestorio", driveId: "17ZgxCfGuaqSHxolsrAyY-nOkKSKJQqi0" },
+            { number: 6, title: "Si haces una promesa, protégela hasta la muerte", driveId: "1s91cSdYUCEZmAAMEesA0mLClW1UxqBj5" },
+            { number: 7, title: "El dueño de una mascota debe cuidarla hasta el final", driveId: "1odvcyHbcd3X5ziimCLU_TaZ_vYMJzPcV" },
+            { number: 8, title: "La diferencia entre ser pesado y persistente es muy pequeña", driveId: "1iQRCCI-FDIydeY_DYhOEgE-RFLcdXFro" },
+            { number: 9, title: "Una pelea debe hacerse con los puños", driveId: "1beqYhg-wi2lErPTXlDc4Bl2wsIywGHoI" },
+            { number: 10, title: "Cuando estés cansado, come algo amargo...", driveId: "11FQ0XerPEB0F-VDgKBf2IJtyBwhsGNPi" },
+            { number: 11, title: "Caps. 11-12 · Buñuelos de arroz que masticar y escupir, no son más que buñuelos de arroz, imbécil-El tipo que da una primera impresión buena, no es un buen tipo", driveId: "1gHXE85xev_g_h1WqE9WbmeV5KP6Ca6lU" },
+            { number: 13, title: "Si vas a hacer cosplay, adornate hasta el corazón", driveId: "1w80oLrCRO3IQN3oawdAeKLZHfOuyrj6G" },
+            { number: 14, title: "Hay una extraña norma que los hombres han de decir para parecer mayores de edad-Sólo puedes lavarte los sobacos, sólo los sobacos", driveId: "1EvuTFtbwNKZGZtAgoseoo8yJaYD783s3" },
+            { number: 15, title: "Dueño y mascota son iguales", driveId: "1HphWNWx_M0rMTX8Tx6c4Zu8ZI1X5fXRF" },
+            { number: 16, title: "¡Si lo piensas, la vida será larga cuando te hagas viejo! ¡Qué rabia!", driveId: "10Kkb4j5fcsh7ZcZTKHoiXC7Xj2oxV0HZ" },
+            { number: 17, title: "Un padre y un hijo comparten cualidades negativas", driveId: "14QIrA9FcZxz5zuAxrd4dAM9ZCL22Somo" },
+            { number: 18, title: "Oh, el hogar es donde está el corazón", driveId: "1GEvY3rveTzBadvak4rLr4LXqaYzNuajX" },
+            { number: 19, title: "¿Por qué el mar es salado Probablemente sea porque la gente lo usa como váter", driveId: "12l3f2g7UjHANijwzbaL1ATCAEKOo4OaG" },
+            { number: 20, title: "Cuidado con la cinta transportadora", driveId: "1DokET0tv0R4a5TDfe6-5awLmt_mHyC4e" },
+            { number: 21, title: "Si eres un hombre, prueba el pez espada-Ten cuidado si duermes con el aire acondicionado encendido o tendrás dolores de estómago", driveId: "1nBNALKNZa6iXf7Luh8CJSUVcf9D2mwjr" },
+            { number: 22, title: "El matrimonio significa que tendrás malos entendidos toda tu vida", driveId: "1PTbW4Ngar_PfN2_sukI1zzHf23inHhpk" },
+            { number: 23, title: "En momentos de problemas, ríe, ríe", driveId: "1K7t_YElfMdaAW10MwHd5YZe1sh_nuFtk" },
+            { number: 24, title: "Una cara bonita definitivamente oculta algo", driveId: "1bnm0S7DAK9cUO184z_YT1ai4HiqbY5FK" },
+            { number: 25, title: "Una olla es como una vida en miniatura", driveId: "1gD-wjb_fsuJNTaHt_fosDa8MdIYlLCXa" },
+            { number: 26, title: "No seas tímido, levanta la mano y habla", driveId: "16L22HNKWQVTSAyI-Q1o2EVbp3jjAw5bx" },
+            { number: 27, title: "Hay cosas que una katana no puede cortar", driveId: "1ipdLfLAwjcn_H7f5Pbxrs18xyimJZ3gK" },
+            { number: 28, title: "Aunque las cosas buenas no vengan consecutivamente, las malas sí", driveId: "1tjwvKY1Ucbmw2UkSWB7NIE98C5faLUgi" },
+            { number: 29, title: "¡No te confundas! hay algo llamado reflexión-Siempre tienes que echar un vistazo a la tele o el periódico", driveId: "1Av6h0xqBwD3KK1tpzDW5Ow2EIsGyZnxv" },
+            { number: 30, title: "Incluso los ídolos hacen las mismas cosas que tú", driveId: "1xXnJmSHUQ08bPiBA9Oj1JXng0h8ZMiIe" },
+            { number: 31, title: "Las cosas que no importan, son las cosas que no puedes olvidar", driveId: "1HlGxolpDclxPLrYbw6RfsbfqvvYEhlUW" },
+            { number: 32, title: "La vida fluye como una cinta transportadora", driveId: "1bDGSI8cyuyA6M6SmMR-qFFAE-sjLKeBM" },
+            { number: 33, title: "Es grosero llamar a alguien por un nombre erróneo", driveId: "1Cw5wm9Im3DNkNOaqrgasM0ybYRq512Rt" },
+            { number: 34, title: "No necesitas algo como un manual de amor", driveId: "1EP2rI-qjl4Fgt_9cXqVNbWp46wswOIKx" },
+            { number: 35, title: "No necesitas algo como un manual de amor (Continuación)-No deberías juzgar a una persona por su apariencia", driveId: "1RdVA5kgYCkiTDPx5cIyfbdxJuBLdnLj-" },
+            { number: 36, title: "La gente con cicatrices en las piernas hablan demasiado", driveId: "1Xn1wCit-7mx0E6li3rbHTLQMem3Y6Hsh" },
+            { number: 37, title: "La verdad es la que la gente que dice que no existe Santa Claus cree que existe-¿Crees que tus problemas desaparecerán con la campana Arreglalos por ti mismo, por ti mismo", driveId: "1i0_85Hg_IYgKPYk2lDTdH0PECouzYslD" },
+            { number: 38, title: "Sólo los niños juegan con la nieve-Comerse un helado en invierno es realmente bueno", driveId: "193defLVYRd4agzVXfz3GBIeGIoMgzmuE" },
+            { number: 39, title: "Los restaurantes de ramen que tienen un extenso menú, no son muy populares", driveId: "1RYU0kIg-qxd8Vkn6cZ7eUBez1psClTMN" },
+            { number: 40, title: "El plan es tener hijos", driveId: "19Qx0luF5h3bwS-WU846mK5GbHzdMdEqa" },
+            { number: 41, title: "No sabes como es de divertida una película si sólo lees el título", driveId: "1cXdVy_6frAhhtcnv2F6PUmGhG37pK5L4" },
+            { number: 42, title: "El gusano se hinchará si te meas en él", driveId: "1HEblkYMhN_WYkJAlkfkB1RPIb9TeLg7V" },
+            { number: 43, title: "El personaje debe ser pintado de forma que sea reconocido solo por su silueta-Desde que acabemos rápido, estamos comenzando el próximo", driveId: "1Kc1mr7uNgYgCvmB6zuI0I5XQf7tA9ZR2" },
+            { number: 44, title: "Mamá está ocupada así que deja de quejarte por el menú de cena", driveId: "1MlJ9fXb-NpljOLmAw2BhTah19khFN5b4" },
+            { number: 45, title: "El paseo del perro debe ser a una velocidad moderada", driveId: "1_a4YNR2sAnAhROOJDe5UfiE1N6iMtxrU" },
+            { number: 46, title: "Los juegos XX son para después de los 20", driveId: "1XCrBua0lcFXGASBXY3U8W7NbhzT-Xb9C" },
+            { number: 47, title: "¿Las cerezas se convierten en cerezos", driveId: "15aKFL496TaHnMlbXPxgf_TVSjx8VC6Ij" },
+            { number: 48, title: "Aquellos que son iguales, se pelean-No importa lo que hagas, no pierdas", driveId: "1eCctAG6TCNQav8S6X9XKnCHOI3ppCMvr" },
+            { number: 49, title: "Una vida sin juego es como el sushi sin wasabi", driveId: "1ZyXU24qalUi6oLRuvjtTz2-XemlLNnhN" },
+          ]
         },
         {
           number: 2,
           title: "Temporada 2",
-          episodes: []
+          episodes: [
+            { number: 50, title: "No decidido es no decidido y no es una decisión", driveId: "1Apk6eg6JRoiRcVhsPuUoDMeH7urV2rEQ" },
+            { number: 51, title: "La leche debe estar a la temperatura del cuerpo humano", driveId: "15IV7FZaccUem9q6nAyu07KaeLDMG3EUN" },
+            { number: 52, title: "Queda con alguien antes de encontrarte con él", driveId: "1nj8tjAgcgU9bjmqf_1GNhvCMEE87GZfU" },
+            { number: 53, title: "El estrés puede llevarte a la calvicie, pero si prestas demasiada atención a no estresarte te estresarás, así que no hay nada que podamos hacer", driveId: "1FEZ5SrpuYiZl8jTMs67IbPU-tZSCc_Dq" },
+            { number: 54, title: "Todas las madres son iguales no importa donde", driveId: "18Kswe3em8pfFFMZGIp9ELN4KPYUdU-lE" },
+            { number: 55, title: "No hagas ruido al masticar cuando estés comiendo", driveId: "1U2a5AKmuqhUioDIkqm3r_FgI-lOoXDj2" },
+            { number: 56, title: "Ten cuidado con el comandante por un día", driveId: "1EdRmIc8g-3PBukIlHhCisoO4n6fDUD6N" },
+            { number: 57, title: "Si estás buscando algo, recuerda lo que hiciste el último día que lo viste", driveId: "1b1IgBxmk8f8qZ-UBs6gFtwmrX1Z-wYhW" },
+            { number: 58, title: "Creo que el pan de croquetas es el mejor de la tienda", driveId: "1d9e7_JwC_U-mFQTVo6AJ7Hm4rdXGQOy5" },
+            { number: 59, title: "No olvides donde dejaste tu paraguas", driveId: "1UONzkVmqJUUflD9mjYPN7rTEMS30I8mh" },
+            { number: 60, title: "El Sol saldrá otra vez", driveId: "1UR4JRNwYMHWq5l4892jb9bfVhowPquE0" },
+            { number: 61, title: "Los bichos acuden a las luces por la noche", driveId: "1W6AwF8YA0Tue8CYjrTLhB3EVdq0hc8H7" },
+            { number: 62, title: "Lo que quieres no es lo que consigues", driveId: "11e2bXyYF4pEYp60wm_2FZ_yXMD8qwY_X" },
+            { number: 63, title: "El previo de la siguiente Jump es inútil", driveId: "11cN2JZLBmtZsRV_7wOo_eWZNIHXyWbGm" },
+            { number: 64, title: "Comer maíz te deja sorprendentemente muy lleno", driveId: "1v7Bc_Ys2VGiSAmcmi-OM6mVTiL7agfy6" },
+            { number: 65, title: "Los chicos aprenden los valores de la vida a través de los escarabajos", driveId: "1ZIBDbwSN1oW9Alxw8s2OQ5lhIE81naJR" },
+            { number: 66, title: "Dame primero pan y luego flores", driveId: "1bLpJ4FyLsdgMBjxzvKesXjXHBbMtzuaZ" },
+            { number: 67, title: "La vida continua corriendo-Creo que Minami es una novia de ensueño", driveId: "1ahSaFCnuSqTDhGJJTc3ek5xdGDpy6zy8" },
+            { number: 68, title: "El otro mundo esta lleno de idiotas", driveId: "1H_HYGIko0GVm7LU-k-AHY0UU7oE62jfJ" },
+            { number: 69, title: "Por favor separe su basura", driveId: "1GM6WmTYPMNL5fnJZXlWDa11CrC1B4iG5" },
+            { number: 70, title: "Incluso las cosas bonitas son desagradables cuando hay muchas", driveId: "1lrl5uRVjnF8lsC5a_yF00W4eC2JS3Wv2" },
+            { number: 71, title: "Hay datos que no se pueden borrar", driveId: "1pVG1ttMF9TQ_U8Pgzb2Tuy0h7gxHEylj" },
+            { number: 72, title: "Las pezuñas de perro tienen un olor aromático-Tal vez, vamos a conducir", driveId: "1JtAeSH-5N31AgpfklwL6NtQkJF0euWyL" },
+            { number: 73, title: "¿Las setas Matsutaket están ricas Creo que la próxima vez tendré más cuidado", driveId: "1rfaP4wR5uEIxk6DvtpImZ0Gl63V5fhn5" },
+            { number: 74, title: "Un mángaka es realmente pro, después de haber realizado sus manuscritos", driveId: "1CSVwpQn62MQ0NEvQPBel-4gjlGKqIu-z" },
+            { number: 75, title: "Quéjate sobre tu trabajo fuera de casa, no dentro. Bueno, si ese es el caso, me quejaré un poco. País de samuráis fue una vieja historia de cuando nuestro país era llamado así... El anime comenzó h", driveId: "1KMl70A2GA5n7f6MjkBVkB8DkVG4VbFa5" },
+            { number: 76, title: "Si ese es el caso, sólo sé tranquilo y arroz rojo", driveId: "1Lm3OINies051_KOXbFlyR6jzWFLbUbMl" },
+            { number: 77, title: "El enemigo de ayer es por algún motivo el enemigo de hoy", driveId: "1go9BMync_bNFYgzlMhYhS1hK2d9G_Uir" },
+            { number: 78, title: "Una persona que es tiquismiquis con la comida es también tiquismiquis con los humanos", driveId: "1LfsXIIpm6ygSDXaAEZa1DDKE2ND9UCdO" },
+            { number: 79, title: "Si hay cuatro personas, hay un montón de conocimiento", driveId: "1p25yBVUeefPjsCnvI-Eo-z7P3GY-Zo6U" },
+            { number: 80, title: "Cuando una persona que lleva gafas se las quita de pronto, siente como si le faltase algo, como si una parte de sí mismo le faltase", driveId: "1VMdyzWnSmCZ00Sya3pYvPgPvv2fywbuQ" },
+            { number: 81, title: "El mejor maquillaje de la mujer es la sonrisa", driveId: "1PDSyQvfrq90VvHRmzkLnSGqGwa6hPZai" },
+            { number: 82, title: "Si te dicen guapo muchas veces, empiezas a creer que lo eres.-No vamos directamente a favor del ramen, sino para nuestra propia satisfacción", driveId: "1CyUFjA641HMaE9UHnh9YtVi1j-mCHnmO" },
+            { number: 83, title: "La posición social no tiene nada que hacer con la suerte", driveId: "11bo4mCKLaXsuHVK27phQ2aq7ZcfUrCk7" },
+            { number: 84, title: "El hombre tiene un huevo cocido en el corazón", driveId: "1A4FsdGSSkdukZ6iWI0w4CCNNyfLpyuL5" },
+            { number: 85, title: "Los huevos cocidos no se pueden romper", driveId: "1G1e9tmoKwV1eS8rwzNJ365kZ6pRSH17J" },
+            { number: 86, title: "Te concentras en contar ovejas y realmente no puedes dormir", driveId: "1YuoJCL63eePusxRPxWUk0Fg09mO6kjCC" },
+            { number: 87, title: "A las mujeres que dicen ¿Qué es más importante, el trabajo o yo, dales un German Suplex", driveId: "1CXyfh5k6rOdy85b6BXDaPzBjNhSg_yM_" },
+            { number: 88, title: "Antes del comienzo, Goukon es lo más divertido", driveId: "1hOs4MGkRJdRa6iF5505zvJq4-NFiCqoI" },
+            { number: 89, title: "Si las cosas ya han pasado dos veces, habrá una tercera vez", driveId: "1jjmwBN8ydrNT3NwhMQZd_EriOmc9Q5Yn" },
+            { number: 90, title: "Tan delicioso como la comida, es espeluznante cuando tienes la comida envenenada", driveId: "1y_lEhYuTiAdtc3lpg80Q2kDqf0awCSqH" },
+            { number: 91, title: "Si quieres adelgazar, no comas y muévete", driveId: "1i5ae2MsKU1bxWc587FZ9hTIlqKngN_tX" },
+            { number: 92, title: "Conviértete en una persona que pueda encontrar las cualidades de la gente, no los defectos", driveId: "1QVEh8umSoOaO0wYFsaycUec0G7ajEwJc" },
+            { number: 93, title: "Incluso un héroe sufre", driveId: "1RrW4fQJv4c7KzszxMrEYvY9Qmvl8rIJU" },
+            { number: 94, title: "Cuando subas a un tren, pon ambas manos a salvo", driveId: "1QMIr34846XI2jieMhtegNIwSCtY6Zj64" },
+            { number: 95, title: "Los hombres están en Madao", driveId: "1xtmRfqFPmilU-i1hB_FbHxuQ6YiZSiWo" },
+            { number: 96, title: "Si eres un hombre, no te rindas", driveId: "1MZrupIW9ila825nxNw0ZepWgY7iCWhAa" },
+            { number: 97, title: "Cuando exageras tus hazañas al triple, todos se divierten-Las tiendas de flores y de pasteles son la debilidad de hombres y mujeres", driveId: "1MnPNY9Ay1NSoG_g_IPsRr7bP9KYqBQ4C" },
+            { number: 98, title: "Se debe jugar a los juegos una hora al día", driveId: "1O6NjdGbhdJcY1UlpXmuS_P8GHSc2TZjp" },
+            { number: 99, title: "La vida y los juegos están lleno de bichos", driveId: "1AiRmWlfsGTVrYlrt3JJHB6MPXfqgR6Zd" },
+          ]
         },
         {
           number: 3,
           title: "Temporada 3",
-          episodes: []
+          episodes: [
+            { number: 100, title: "Las cosas desagradables tienen un límite sobre como amarlas", driveId: "1rupsrO7AfKIFSXLk3VEVGdRinOjnEopT" },
+            { number: 101, title: "Las reglas están hechas para romperlas", driveId: "1arqmYLxmAuJnOAYLHFqS_4yP-3-VH15g" },
+            { number: 102, title: "Los otaku son charlatanes", driveId: "1FrCzR8-YpY4FJAI6rdBZnnS2FSG6F-iR" },
+            { number: 103, title: "La diferencia entre fuerza y debilidad está separada por una débil línea", driveId: "1q0rs7FD2XSMYYYWj4Q4O2_5tlJ9Vqz1G" },
+            { number: 104, title: "Las cosas importantes son difíciles de ver", driveId: "1fpEdtBD7dHpdT6SODBlzKMQCmvjeW1e5" },
+            { number: 105, title: "El tiempo lo captura todo", driveId: "1zhpr2bSJYUkRj7aYIUJI7yZmZTJWxz2D" },
+            { number: 106, title: "El amor es sobre todo un modo de muerte súbita", driveId: "1Y7qZ51En70oUE6gJpRHlrSa0NFOmC5St" },
+            { number: 107, title: "Los niños no pueden leer las mentes de sus padres", driveId: "1fuHuEkWxvtaTWiXGHuCl5VrTWjWGBUTw" },
+            { number: 108, title: "Mejor dejarlo inexpresado", driveId: "1sh3TN5_UGb-t0NsXeJxArLFGMZBAVofc" },
+            { number: 109, title: "La vida es una prueba", driveId: "1wRG241u-TJ_1_dMMunenBmUF5kgBJKEP" },
+            { number: 110, title: "Todo el mundo huye de una prisión llamada Yo mismo", driveId: "1AjLho5Nsy1Rjs1_Cn0Bo7OSsi0qqOiIH" },
+            { number: 111, title: "Definitivamente no dejes que tu novia vea lo que usas para travestirte-Hay casi un 100% de probabilidades de perder un paraguas de vinilo y entonces odiarse a uno mismo", driveId: "1LRWbhTtD5LDsWnmPs-g7HgLykD_gsm5L" },
+            { number: 112, title: "Tu 20º cumpleaños no tiene un significado profundo  Tienes suerte si puedes quedarte hasta tarde a trabajar", driveId: "1wAtL_RVp_XveZVibUNUiFeCy4LHxOM5g" },
+            { number: 113, title: "La acción de abrillantar un orinal es como la acción de abrillantarte el corazón", driveId: "1gstkTzXINV-HbwGsqqbQp-mxzqHsplFb" },
+            { number: 114, title: "Dicen que si añades salsa de soja a las natillas les das sabor a erizo de mar, pero la verdad es que, añadiendo salsa de soja a las natillas sólo les das sabor a salsa de soja y natillas.", driveId: "1gIj98qhvAPVem6tTGRT6oOWvUw2dQgV7" },
+            { number: 115, title: "El momento justo antes de las vacaciones de verano es el más divertido", driveId: "18zaUnkKd1loJjyiqYSOC6IpAUsdlGvno" },
+            { number: 116, title: "El mayor es el más sabio", driveId: "1gPFnhEPPtqpycqwIFU2CGEljox2Nz2fH" },
+            { number: 117, title: "La belleza es como una fruta de verano", driveId: "1A6xUaiOKChXrycKUUYnjRdjvKLHl-ly4" },
+            { number: 118, title: "Sé tan sencillo como tu cintura doblada", driveId: "1r7W8xcueiz9NNOPdjN9dOtvMY7coWVyk" },
+            { number: 119, title: "Aquellos que fuman uno o dos cigarros se impregnan de olor a estiércol de caballo", driveId: "1d6L24sh82-KyTQXsOIPY9JEmhXcEkYYw" },
+            { number: 120, title: "El sabor de los restaurantes japoneses extranjeros es idéntico al de una cafetería escolar-Una vez que hayas elegido un plato, no se puede cambiar", driveId: "1AK57A1Im7VAWy5a3Bjmyeyy7Gh00J0x0" },
+            { number: 121, title: "Un principiante sólo necesita un destornillador en Phillips y uno de cabeza plana", driveId: "1mBS_vA3NBUYWb0sZhqwKAD9NG9g8sxvu" },
+            { number: 122, title: "La imaginación debe desarrollarse en grado 2", driveId: "1u3txkfK8bLlqYPJ2m8zi3O0P64hzjbcy" },
+            { number: 123, title: "Hay un destornillador en cada corazón", driveId: "1-YoN_1rVxYFkmrrqvshvNannEZGl5VMU" },
+            { number: 124, title: "Demasiado acosador puede convertirse en una amenaza", driveId: "1ZnzUHhbcgrVn3D5mpcUEXL72WOl0seqe" },
+            { number: 125, title: "¡En el capítulo final!", driveId: "1x3lhv4KOCJpwZ7MMchRI9HhDFqBUOh75" },
+            { number: 126, title: "Hay cosas que no se pueden expresar con palabras", driveId: "1PtGe4wHPaCvT-1AJChCNGwhAQVYfM_DD" },
+            { number: 127, title: "Hay cosas que no puedes entender a menos que las encuentres", driveId: "1t8vxt_i71wvTpwwYjdz_Dh3tdPPgDDd5" },
+            { number: 128, title: "Hay cosas que no puedes entender incluso encontrándolas", driveId: "1jcO4cmEet5gYbsFr_8lvwBjK4GxvItmg" },
+            { number: 129, title: "Ten cuidado de que tu mascota coma en el suelo", driveId: "1Y2uwMZjYeII_YfQ_6GygXqgyLjArgCLQ" },
+            { number: 130, title: "Los amantes gatos y perros jamás hacen las paces", driveId: "1xpEMYdi0rlJ12ByXEweG0P0zWcYodzh1" },
+            { number: 131, title: "Las peleas comúnmente suceden en el destino del viaje", driveId: "1TecmPdodlSBIUurQG2SRvX8LyT67T702" },
+            { number: 132, title: "Los pantalones apretados terminan inevitablemente sucios", driveId: "1ehCvcTMk_RlRYbqdsRDkcLVBQx58ijHV" },
+            { number: 133, title: "Gin y su excelencia bueno para nada", driveId: "1nsx_vEjU0eug29btprZKCxoU87lgMHuJ" },
+            { number: 134, title: "Ten mucho cuidado cuando cuentas historias de fantasmas", driveId: "17VOJe1uafyXlXomoPiGH81vatppBym8a" },
+            { number: 135, title: "Antes de preocuparte por la Tierra piensa en el peligro en el futuro de Kintaman", driveId: "1e_mDroZobaCKKGpCipz1ear-gBBDBX8C" },
+            { number: 136, title: "Es tu casa, tú la construiste", driveId: "1DCjPRk8gJ-NckyjiSfhow00bBUA5UZ7z" },
+            { number: 137, title: "El 99% de los hombres no están seguros cuando confiesan su amor-Este amanujaku quiere de verdad creer en Santa Claus", driveId: "1cL9HNXtSxqos83sodLSB2e6JTwR-baSg" },
+            { number: 138, title: "¿Por qué no hablamos de los viejos días para variar...", driveId: "1Qlrld1IOwlifAnWRm__0RKP1ZtkjNr0_" },
+            { number: 139, title: "No pongas tu billetera en tu bolsillo trasero", driveId: "1s2uZTE-a7NdzL0FaggNAaF9NYl0cGqBp" },
+            { number: 140, title: "Cuídate de aquellos que llevan sombrilla en un día soleado", driveId: "1KTWYfVLgWvEQCXu4eAvAHRl5QQqkhx4p" },
+            { number: 141, title: "Meterse en una pelea es peligroso", driveId: "1KERU0a2SS-PrAz8pDAQx6Qs4h__ehMgM" },
+            { number: 142, title: "La vida trata sobre hacer decisiones consecutivas", driveId: "1I06B2_B8MLyks7wcMVLL3jaql9O4wszh" },
+            { number: 143, title: "Aquellos que se sostienen en cuatro patas son bestias, aquellos que se sostienen en dos piernas, entrañas y gloria son hombres", driveId: "1t-gvsHJ4ZAPlhtW-lT-V0mnYmNgCqPhW" },
+            { number: 144, title: "No confíes en cuentos para dormir", driveId: "1doYehY11z9zvBCOoU0JfQGev9OX76YOe" },
+            { number: 145, title: "El color que une a cada persona viene en distintos colores", driveId: "1JNgE950clbWfMxbs7N5_GZrQa3nXjoHZ" },
+            { number: 146, title: "El sabor de beber en pleno día es especial", driveId: "15jMrYeU8AMi3BkxKD6eBK_rMCQlBPkgM" },
+            { number: 147, title: "Cada adulto es el instructor de un niño", driveId: "1CQiCGAq-U6_cIWvIHE532c15LkWvRFWL" },
+            { number: 148, title: "Los zippers deben abrirse lentamente", driveId: "1ZiHyeXTJ_jTqHoIUIH_gMmQxHVhN0J5f" },
+            { number: 149, title: "Cuando la mitad del helado comienza a derramarse sobre su soporte es cuando los imbéciles piden que compartas", driveId: "1UifCwpB8_sonOehAdxuOQT1L0TGkFN5l" },
+            { number: 150, title: "¡Amárrate con cosas largas!", driveId: "1e6NgmJaYf5FvzcuJFQ1MYVVVIdrIXcTi" },
+          ]
         },
         {
           number: 4,
           title: "Temporada 4",
-          episodes: []
-        }
+          episodes: [
+            { number: 151, title: "Una conversación con un peluquero durante un corte es lo más sin sentido en este mundo", driveId: "1iIdpKXoctzEdX7o0bTgMh0p67j5XuDIJ" },
+            { number: 152, title: "Los cielos crearon Chonmage sobre el hombre en lugar de otro hombre", driveId: "1B3Hf7ymSx71Iar66o-T8TaMglvwhDvJY" },
+            { number: 153, title: "Dormir hace crecer a los niños", driveId: "1bSQK29KfLvD35Ni2rUS1PPpqNnHLQ5X2" },
+            { number: 154, title: "Normalmente las personas parecen diferentes durante su fiesta de cumpleaños", driveId: "1X6ULIDxXng1H4C9mhrBPgICztSYRIMJW" },
+            { number: 155, title: "EL otro lado del otro lado del otro lado es el otro lado", driveId: "1lyWRVFSiYLnYWF5HtRlC4s57UNmdP_Ln" },
+            { number: 156, title: "Se requiere un poco de coraje para entrar en un puesto de vendedor ambulante", driveId: "1HPcvWwkhB2Le5p5C7h5D92FGsdJmWAtq" },
+            { number: 157, title: "Cualquier lugar con un grupo de hombres se convierte en un campo de batalla", driveId: "1wRNR3s-ug-YBxh9E-jUy6idjvheAAkGo" },
+            { number: 158, title: "Si un amigo está herido llévalo al hospital inmediatamente", driveId: "1LHHl2NTs-E2xXQDl76UhZkOkM6MNbrPg" },
+            { number: 159, title: "Si una mandarina en la caja está podrida, todas las demás se pudrirán antes de que te des cuenta", driveId: "1JaI2MPZxI0qcWuDU8ZWSuMmGEWSC2ut5" },
+            { number: 160, title: "Desde el punto de vista de un extranjero tú eres extranjero, desde el punto de vista de un alienígena tú eres alienígena", driveId: "1iuV1cp-XTdlkPGAeu3rc0_XOPqXYh65K" },
+            { number: 161, title: "Sin importar cuantas veces la veas, Laputa sigue siendo buena", driveId: "11CI0uYvF3rXT6oWro80SHIOM1HsCNEWr" },
+            { number: 162, title: "El amor no pide nada a cambio", driveId: "1xEf5xCxjrsK_Dv6dVeGTGOw8SRgZ25KO" },
+            { number: 163, title: "Los barcos negros también son llamativos cuando se hunden", driveId: "1XiEMRR8MlzDaQg0_1Dl53cJT_KD4ZpU7" },
+            { number: 164, title: "Esa sopa de Matsutake sabe mejor que el verdadero-Si una persona ha muerto no puede revivir", driveId: "11QP9y96i0cNX0yE0TcdyQ7d-3DvjYSxi" },
+            { number: 165, title: "Hay mucha tierra debajo del sauce", driveId: "1K0cZ-cvK7L9jr2ySkyhEh-dCKEz3LA2N" },
+            { number: 166, title: "Dos es mejor que uno, dos personas son mejores que una sola", driveId: "12s2EcRBHYmptzgY2NSDgK7Ha2gTmSWCY" },
+            { number: 167, title: "Polígonos suaves ayudan a suavizar el corazón de una persona", driveId: "1vETdn7NB2mZ2TiqIoC0n80xWN-ykJPCb" },
+            { number: 168, title: "Las personas tienen un pequeño universo en sus cuerpos", driveId: "1U-kiVX_1DXfWA0eLcTD9sl2JmbwQ0YnP" },
+            { number: 169, title: "Los idiotas elegidos", driveId: "16x8nrm77j-5xTx2G6I9yd5JxZO5jSO0W" },
+            { number: 170, title: "Y hacia la leyenda", driveId: "18kkhWqKAib_CAsxvRc7FsV7ot0Vx3esZ" },
+            { number: 171, title: "Imitación aproximada y demandas-Dulcemente sabes que comienza a desaparecer", driveId: "1vwNnn0snD5Pqb0T0K2H7WJQGQFM09xI1" },
+            { number: 172, title: "El dulce y el látigo son un tipo de entrenador", driveId: "1Ol15HneVpKlQclzBuUJS85-bg8yVu2az" },
+            { number: 173, title: "Hay que poner atención a la apariencia de los contenidos-También hay límite a la apariencia de los contenidos", driveId: "1Lpnrrv4Ci8l3tgYCpp_6EdBPGAgp6Lyj" },
+            { number: 174, title: "¿Aún hay gente que va al océano y grita Tonto-Cuando una persona está encerrada, sus puertas interiores se abren", driveId: "1W8I3be0SZER0b-KZgCzaUZjayZoz3Yqd" },
+            { number: 175, title: "Personas de todas las edades odian ir al dentista", driveId: "1I9-bghZn0OeHmx1I8KWU0KanjDzY5jkJ" },
+            { number: 176, title: "Empieza la cuenta regresiva", driveId: "1PhIc7H-LBfuusctTMfuKSYT8gphZSeyO" },
+            { number: 177, title: "Da mala suerte ver una araña por la noche", driveId: "1GtX20yDK5Y2ID47BGoD_d433Lq-cvBw9" },
+            { number: 178, title: "Una vez que has sido atrapado en una telaraña, es difícil salir de ella", driveId: "1YjB3jNEkKXERptKRpQqRtl6jaud1LXSv" },
+            { number: 179, title: "El irresponsable es quién se asusta cuando lo molestan", driveId: "1m9DGupCBnuOmQ9iJaaqnB5CEXOgFvprt" },
+            { number: 180, title: "Mientras más preciada sea la carga, más pesado y difícil es soportarla", driveId: "1L_w4agBPDCIFR0DxZFTdC896lft4dWAy" },
+            { number: 181, title: "Ten cuidado de un grupo de mujeres y una bebida", driveId: "15TQKL5uJHwOSfstglzzY2Ex8tJn7ZUy6" },
+            { number: 182, title: "Retorcer la encuesta de popularidad", driveId: "1StSdH7imu0xxMpJTot3US7rJwBtdKyaD" },
+            { number: 183, title: "Las encuestas de popularidad te pueden llevar al infierno", driveId: "1g57k-9YNdw2e4Me2aO8yHXBNf6KrN6QS" },
+            { number: 184, title: "Ninkitouhyou nante ...", driveId: "1Int2JJGzNAnkNIkqqjuKke4rJSOOZRMG" },
+            { number: 185, title: "La ciudad de origen y los pechos son las mejores cosas en las que se pueden pensar-Hachi ni sasa retara shouben kakerotte are ha meishin desu bai kin ga iru kara kiwo tsukeyoune!!", driveId: "1pRSTTtOElJPwohMTpvwkchGBJtzyTy_v" },
+            { number: 186, title: "Ten cuidado con los presagios", driveId: "1nRFpv5mJQE4WJcnsXAe_Ys2cPgR3sPB0" },
+            { number: 187, title: "Una vez que la señal está dada es el adiós", driveId: "1Ww4iqwXPBgdJakCg2is8uIYpA12yZnfp" },
+            { number: 188, title: "Una bitácora de observación debe ser vista hasta el final", driveId: "1OpkQ0fxXiRjvS6ax1MnKF6fZn40T8bOR" },
+            { number: 189, title: "Es mejor procurar las actividades durante el año, ya que una vez que termina, te das cuenta que es mejor posponerlo al próximo año para empezar de nuevo. Y así es como termina el año-Los ejercicio", driveId: "1yLW7xKBD9sx-oNW4dacw-hwWeSO3odS1" },
+            { number: 190, title: "Cuando busquen algo, traten de usar su perspectiva", driveId: "1pLME8SunMiaK2Gh1GA2I0NV63KtAuCEg" },
+            { number: 191, title: "La libertad significa ser fiel contigo mismo, sin romper la ley", driveId: "1UlN8Qp4apOUNXHkO_wZMDoRTg7IYA1YL" },
+            { number: 192, title: "El blues de los gatos callejeros de Kabukicho", driveId: "1yADG0xS6nflrZ4zE-gCaIWwO5flriQi0" },
+            { number: 193, title: "El cocinar es sobre el coraje", driveId: "1kYkrfHjUcIdqbXM6NxrMGDgIxWPC7hRW" },
+            { number: 194, title: "Siempre que escucho la palabra Leviatán, tonto de mí, inmediatamente pienso en Sazae-san!", driveId: "12aZfrhNGkNKbKFYLZsuLksFe_b1zJrZG" },
+            { number: 195, title: "No te pierdas en la lluvia", driveId: "1oycnskxKz2ARfUIGY4GYoXKqDQVanGj-" },
+            { number: 196, title: "No te pierdas en el viento", driveId: "1awuWMMTH6xkV69Rx1O3rPZL9-SlLTLpV" },
+            { number: 197, title: "No te pierdas en la tormenta", driveId: "1Q_eDuP_wG-LzrMnp8hEI17RXTVeQhBdG" },
+            { number: 198, title: "Nunca pierdas esa sonrisa", driveId: "1GswpaAwbyQZFRSPinTpQ88cBSXZrs3yZ" },
+            { number: 199, title: "Así es como quiero ser, hermosa y fuerte", driveId: "1YsYrjySlAgVshy84_10EXRnuGz8JPt8W" },
+            { number: 200, title: "El rojo de Santa es probablemente sangre", driveId: "11QqNKzfSf5HoXRXqAQO8XNbZR88wD6on" },
+            { number: 201, title: "Todos pueden ser Santa", driveId: "1ZKQMY0MNJmjD4MGvpxEdJISqNR6eWaes" },
+          ]
+        },
       ]
     }
   ]
