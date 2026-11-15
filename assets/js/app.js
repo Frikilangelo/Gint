@@ -280,14 +280,8 @@
     const s = currentSeries();
     if (!s) return;
 
-    $("#heroTitle").textContent = s.title;
-    $("#heroMeta").textContent = [
-      s.year,
-      plural(s.seasons.length, "temporada", "temporadas"),
-      plural(totalEpisodes(s), "episodio", "episodios")
-    ]
-      .filter(Boolean)
-      .join(" · ");
+    /* La cabecera lleva el logo de la serie en lugar del título y los datos. */
+    $("#heroLogo").alt = s.title;
     $("#heroSynopsis").textContent = s.synopsis || "";
 
     const art = $("#homeArt");
