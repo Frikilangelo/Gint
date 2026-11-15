@@ -157,6 +157,17 @@ a { -webkit-tap-highlight-color: transparent; }
   padding: clamp(8px, 2vw, 30px) 0;
 }
 
+/* Con una sola serie no hay panel de series: el menú ocupa todo el ancho. */
+.home__body--single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.home__body--single .hero {
+  max-width: 74ch;
+}
+
+.menu[hidden] { display: none; }
+
 .hero { min-width: 0; }
 
 .eyebrow {

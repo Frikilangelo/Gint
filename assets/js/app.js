@@ -231,6 +231,8 @@
   const screenHome = $("#screen-home");
   const screenSeries = $("#screen-series");
   const menuList = $("#seriesMenu");
+  const seriesPanel = $("#seriesPanel");
+  const homeBody = $(".home__body");
   const player = $("#player");
   const playerFrame = $("#playerFrame");
 
@@ -243,6 +245,13 @@
   }
 
   function renderMenu() {
+    if (!menuList) return;
+
+    /* El panel de series sólo aparece cuando hay más de una serie. */
+    const variasSeries = catalog.series.length > 1;
+    if (seriesPanel) seriesPanel.hidden = !variasSeries;
+    if (homeBody) homeBody.classList.toggle("home__body--single", !variasSeries);
+
     menuList.innerHTML = "";
 
     if (!catalog.series.length) {
