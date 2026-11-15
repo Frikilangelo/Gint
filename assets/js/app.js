@@ -309,6 +309,21 @@
     playButton.disabled = !target;
     $("#btnPlayLabel").textContent = watched ? "Continuar" : "Reproducir";
 
+    const seasonRow = $("#homeSeasons");
+    seasonRow.innerHTML = "";
+    seasonRow.hidden = !s.seasons.length;
+    s.seasons.forEach((season) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "season-btn";
+      button.textContent = season.title;
+      button.title = plural(season.episodes.length, "episodio", "episodios");
+      button.addEventListener("click", () => {
+        navigate("#/serie/" + s.id + "/" + season.number);
+      });
+      seasonRow.appendChild(button);
+    });
+
     const note = $("#heroResume");
     if (target) {
       const season = s.seasons.filter((item) => item.number === target.season)[0];
