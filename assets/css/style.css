@@ -302,18 +302,29 @@ a { -webkit-tap-highlight-color: transparent; }
   background: rgba(255, 255, 255, 0.06);
 }
 
-/* Los botones de temporada no pasan de la mitad del ancho de la pantalla. */
+/* Los botones de temporada no pasan de la mitad del ancho de la pantalla
+   y todos miden lo mismo, aunque el nombre ocupe dos líneas. */
 .hero .hero__seasons {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  grid-auto-rows: 68px;
   gap: 12px;
   margin: clamp(20px, 2.6vw, 28px) 0 0;
   max-width: 50%;
 }
 
 .hero .hero__seasons .season-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
+  height: 100%;
+  padding: 6px 14px;
+  line-height: 1.15;
   text-align: center;
+  white-space: normal;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .hero__resume:empty { display: none; }
