@@ -93,6 +93,27 @@ a { -webkit-tap-highlight-color: transparent; }
     linear-gradient(180deg, rgba(8, 9, 11, 0.6), rgba(8, 9, 11, 0.97));
 }
 
+/* En el menú principal la imagen se ve entera, oscurecida sólo lo justo
+   para que el texto siga leyéndose. */
+.screen--home .backdrop.has-art { opacity: 1; }
+
+.screen--home .backdrop::after {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 9, 11, 0.96) 0%,
+      rgba(8, 9, 11, 0.82) 38%,
+      rgba(8, 9, 11, 0.55) 68%,
+      rgba(8, 9, 11, 0.4) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(8, 9, 11, 0.55) 0%,
+      rgba(8, 9, 11, 0.15) 35%,
+      rgba(8, 9, 11, 0.85) 100%
+    );
+}
+
 .screen--series .backdrop { opacity: 0.28; }
 
 .grain {

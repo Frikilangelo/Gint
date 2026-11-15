@@ -35,6 +35,8 @@ window.GINT_CATALOG = {
         "Gintoki, un samurái de pelo plateado, sobrevive haciendo encargos de todo tipo junto a " +
         "Shinpachi y Kagura en una casa que no es exactamente un salón de té.",
       cover: "",
+      // Imagen de fondo del menú principal.
+      backdrop: "assets/gintamaBG.jpg",
       seasons: [
         {
           number: 1,
