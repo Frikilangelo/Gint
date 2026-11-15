@@ -211,7 +211,7 @@ a { -webkit-tap-highlight-color: transparent; }
 .hero__logo {
   display: block;
   width: auto;
-  height: clamp(150px, 15vw, 240px);
+  height: clamp(300px, 30vw, 480px);
   margin: 0;
   filter: drop-shadow(0 14px 34px rgba(0, 0, 0, 0.55));
 }
@@ -671,7 +671,7 @@ kbd {
     padding-top: 4px;
   }
 
-  .hero__logo { height: clamp(110px, 22vw, 170px); }
+  .hero__logo { height: clamp(220px, 44vw, 340px); }
   .hero__synopsis { max-width: 100%; -webkit-line-clamp: 3; }
   .hero .hero__seasons { max-width: 100%; }
 }
