@@ -266,6 +266,20 @@ a { -webkit-tap-highlight-color: transparent; }
   background: rgba(255, 255, 255, 0.06);
 }
 
+.hero__resume:empty { display: none; }
+
+.hero__resume {
+  margin: 18px 0 0;
+  padding-left: 12px;
+  border-left: 2px solid var(--accent);
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  max-width: 60ch;
+}
+
 .btn__icon { font-size: 0.72rem; }
 
 /* ---------- Lista de series ---------- */

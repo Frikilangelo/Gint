@@ -196,26 +196,27 @@
     return !!(entry && entry.seen && Object.keys(entry.seen).length);
   }
 
-  /* Primer episodio sin ver (o el último visto si no hay más). */
+  /*
+   * Posición recordada: el capítulo siguiente al último que se abrió.
+   * Si ese era el último de la serie, se ofrece el mismo.
+   * Sin historial, el primero disponible.
+   */
   function resumeTarget(s) {
     const entry = progress[s.id];
     const list = playableList(s);
 
+    if (!list.length) return null;
+
     if (entry && entry.last) {
-      const hit = findByKey(s, entry.last);
-      if (hit && hit.episode.videoId) {
-        const remaining = list.filter(
-          (item) => !isSeen(s.id, item.season, item.episode)
-        );
-        if (remaining.length) return remaining[0];
-        return { season: hit.season.number, episode: hit.episode.number };
+      const index = list.findIndex(
+        (item) => item.season + "-" + item.episode === entry.last
+      );
+      if (index !== -1) {
+        return list[index + 1] || list[index];
       }
     }
 
-    for (let i = 0; i < list.length; i++) {
-      if (!isSeen(s.id, list[i].season, list[i].episode)) return list[i];
-    }
-    return list[0] || null;
+    return list[0];
   }
 
   /* ================================================================== */
@@ -303,9 +304,26 @@
     }
 
     const target = resumeTarget(s);
+    const watched = hasWatched(s.id);
     const playButton = $("#btnPlay");
     playButton.disabled = !target;
-    $("#btnPlayLabel").textContent = hasWatched(s.id) ? "Continuar" : "Reproducir";
+    $("#btnPlayLabel").textContent = watched ? "Continuar" : "Reproducir";
+
+    const note = $("#heroResume");
+    if (target) {
+      const season = s.seasons.filter((item) => item.number === target.season)[0];
+      const episode = season
+        ? season.episodes.filter((item) => item.number === target.episode)[0]
+        : null;
+      const where =
+        "T" + target.season + " · E" + pad(target.episode) +
+        (episode ? " — " + episode.title : "");
+      note.textContent = (watched ? "Continúa en " : "Empieza por ") + where;
+      playButton.title = (watched ? "Continúa en " : "Empieza por ") + where;
+    } else {
+      note.textContent = "";
+      playButton.removeAttribute("title");
+    }
 
     $$(".menu__item", menuList).forEach((item, index) => {
       const active = index === state.seriesIndex;
