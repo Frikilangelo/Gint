@@ -302,14 +302,16 @@ a { -webkit-tap-highlight-color: transparent; }
   background: rgba(255, 255, 255, 0.06);
 }
 
-.hero__seasons {
+/* Los botones de temporada no pasan de la mitad del ancho de la pantalla. */
+.hero .hero__seasons {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
   gap: 12px;
   margin: clamp(20px, 2.6vw, 28px) 0 0;
+  max-width: 50%;
 }
 
-.hero__seasons .season-btn {
+.hero .hero__seasons .season-btn {
   width: 100%;
   text-align: center;
 }
@@ -670,6 +672,8 @@ kbd {
 
   .hero__title { font-size: clamp(1.9rem, 8vw, 3rem); }
   .hero__synopsis { -webkit-line-clamp: 3; }
+  .hero .hero__seasons { max-width: 100%; }
+}
 }
 
 @media (max-width: 600px) {
