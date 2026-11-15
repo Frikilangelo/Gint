@@ -19,9 +19,9 @@
  * "Cualquier persona con el enlace" (Lector): el reproductor entra sin
  * iniciar sesión. Si algún archivo se pone en privado, deja de verse.
  *
- * Las temporadas 1 a 4 siguen la numeración original de la serie y continúan
- * de una a otra (la temporada 2 empieza en el capítulo 50). De la 5 en
- * adelante cada una numera sus capítulos desde el 1, como en los archivos.
+ * En la serie Gintama, las temporadas 1 a 4 siguen la numeración original y
+ * continúan de una a otra (la temporada 2 empieza en el capítulo 50). De la 5
+ * en adelante cada una numera sus capítulos desde el 1, como en los archivos.
  * ---------------------------------------------------------------
  */
 
@@ -427,6 +427,67 @@ window.GINT_CATALOG = {
             { number: 11, title: "La insignia de honor de un idol", driveId: "1CWk2uYZLTE6HJfHq7f_VhIkkffB7_cwI" },
             { number: 12, title: "La línea entre los juegos divinos y los juegos de mierda es muy delgada - Las gafas son parte del alma", driveId: "1qtOPm--QrEOLv20AVCbihtH1y30MXutK" },
             { number: 13, title: "Los espíritus guardianes también son parte del alma", driveId: "1ziPquHQ_2FhRG8TxqcvnGmrcHwzXAV3K" },
+          ]
+        },
+        {
+          number: 10,
+          title: "Temporada 10",
+          episodes: [
+            { number: 1, title: "Intente lo mejor que pueda hacer que una permanente natural desaparezca, siempre volverá", driveId: "1214S3EKl2AcddSg1tqWAAvvnSBGpDKV3" },
+            { number: 2, title: "La condimentación es mejor en pequeñas cantidades", driveId: "1dCav-rrR2p6QfzOqwrQSA66Rqbv6JwiM" },
+            { number: 3, title: "El hijo de un delincuente tiene un largo largo del cuello", driveId: "14ov4wdMlAdcwflNyQ7lXryhVdcv62rT6" },
+            { number: 4, title: "La línea entre tenaz y molesto es delgada como el papel", driveId: "1dxrUMMKMLeWkTqenzgyv5U2a3ltUj9fZ" },
+            { number: 5, title: "Los Geezers esculpen las cosas que no deberían olvidar en sus arrugas", driveId: "1zI_UQYdsq0LsH4yGl98sAng_z7reKbsv" },
+            { number: 6, title: "Las máquinas que toman hábitos inútiles se llaman personas", driveId: "1ctYXEuB8GTzT6lSBhf36EWtON6zSuCVp" },
+            { number: 7, title: "Los hombres deben vivir no largos ni gruesos, sino duros", driveId: "1cCP-tsTIwGgz6YUF0vJtiW68vXKkdcuM" },
+            { number: 8, title: "Los oni son débiles contra pequeños héroes como el samurái de una pulgada", driveId: "1uStTH-2SzADOibj2RHimPxm91ab4iZHn" },
+            { number: 9, title: "Alardear de tus propios actos heroicos hará que las personas te odien, así que haz que otros lo hagan por ti", driveId: "1isuC8Tdekin82dcJQM5yiiOZcKfN7E-d" },
+            { number: 10, title: "El salto y la inflación van de la mano", driveId: "1RtIaahAdkoA8bUyTKscDo5oRz-UJWhCC" },
+            { number: 11, title: "La paz y la destrucción son dos caras de la misma moneda", driveId: "1otN5ZXpA7LfxlopvXkm15UTiJFSZ7Zt5" },
+            { number: 12, title: "El Bushido se encuentra un segundo antes de la muerte", driveId: "1YgkRab9B9i3d1XPyAD-9uT_UTIDrG4IJ" },
+          ]
+        },
+        {
+          number: 11,
+          title: "Temporada 11",
+          episodes: [
+            { number: 1, title: "Los malvados que hacen el bien", driveId: "1AwVLAtd18rCP_qI4LYDS8JKOF40hNb9_" },
+            { number: 2, title: "Los conejos saltan más alto en las noches iluminadas por la luna", driveId: "1yehiXhVsSzsvh3CUxkABCL5k9gc7Uvqc" },
+            { number: 3, title: "Haciendo interesante un mundo aburrido", driveId: "1RQiNeD4h9GrOb9Q7f_DUjbfjTOrq-nXt" },
+            { number: 4, title: "Haz algo no característico y algo no característico sucederá", driveId: "17CCK2KctQEhS6TejVeSsMKoymcr_HtVg" },
+            { number: 5, title: "Innumerables reyes", driveId: "1l-jRB6ILRozgKkPZ0rfXWO-VOHefY--W" },
+            { number: 6, title: "Los desempleados no pueden ser manchados por nada", driveId: "1rKEoCuJ610_4tIheiV3FgXsC96UER_R3" },
+            { number: 7, title: "Siempre sostiene tus cartas de triunfo", driveId: "19WqkFlPG5Wlj_bBWvruyuxU1Tkp0Xfp1" },
+            { number: 8, title: "Las criaturas conocidas como humanidad", driveId: "1UYup4gCOYs89BmnjmiKARpvmPiPAwgHk" },
+            { number: 9, title: "Signo", driveId: "1eM7fpLgnHbbD_tBdGyMk7UH8l8GPojp2" },
+            { number: 10, title: "Espectro", driveId: "185dpt8HzQaE-DuHTsgvizaZti9CS9REA" },
+            { number: 11, title: "Dos en años de mujer es igual a diez en años de hombre", driveId: "15C43_iVhN03fsbCe5qQjcLeCGc4c2THW" },
+            { number: 12, title: "Salvación", driveId: "114_hfFeys33DqgUu59es0T8IAwQp9Izs" },
+            { number: 13, title: "Dun Dun", driveId: "1rtlXq751CSAGxkKXNHE2QnIa1EobXV85" },
+          ]
+        },
+      ]
+    },
+    {
+      id: "peliculas",
+      title: "Gintama · Películas y OVAs",
+      year: 0,
+      synopsis:
+        "Largometrajes, OVAs y especiales de la franquicia, en orden de historia. Ideales para ver entre temporada y temporada.",
+      cover: "",
+      backdrop: "assets/gintamaBG.jpg",
+      seasons: [
+        {
+          number: 1,
+          title: "Películas y OVAs",
+          episodes: [
+            { number: 1, title: "Película · Shinyaku Benizakura-hen (remaster de los capítulos 58 a 61)", driveId: "1Ub4UmN9YMBsLmtPwcnX0SWpoohOYHwEp" },
+            { number: 2, title: "OVA · No es el inicio, pero es bastante bueno para estirarlo un poco", driveId: "1WpEispnYGIDbpYQ4mTPuqMjj0xlABvLd" },
+            { number: 3, title: "OVA · Anuncio de Gintama la película: el nacimiento del demonio blanco", driveId: "1SLiAFVF4jr_ojKpl2mFI84URyZbfQAGm" },
+            { number: 4, title: "Película · Yorozuya yo Eien Nare (final alternativo)", driveId: "1DLjRKetKCv_yvgRIe4wf0RwxR394myFp" },
+            { number: 5, title: "Love Potion 01 · después de la temporada 7", driveId: "13-l7VIG_20Cag0YoDgRA7MiqMUtq6zrz" },
+            { number: 6, title: "Love Potion 02 · después de la temporada 7", driveId: "1wKexQ2t9rVzr5Th29BbEXclnC_mibEIo" },
+            { number: 7, title: "OVA · Post Love Potion (2015)", driveId: "1YrD8xzUYg1xitFB0o51AmVTqDfcrYuW3" },
           ]
         },
       ]

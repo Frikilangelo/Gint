@@ -230,9 +230,7 @@
 
   const screenHome = $("#screen-home");
   const screenSeries = $("#screen-series");
-  const menuList = $("#seriesMenu");
-  const seriesPanel = $("#seriesPanel");
-  const homeBody = $(".home__body");
+  const seriesSwitch = $("#seriesSwitch");
   const player = $("#player");
   const playerFrame = $("#playerFrame");
 
@@ -244,39 +242,30 @@
     return catalog.series[state.seriesIndex] || null;
   }
 
-  function renderMenu() {
-    if (!menuList) return;
+  /* Selector de series: sólo aparece cuando el catálogo tiene más de una. */
+  function renderSeriesSwitch() {
+    if (!seriesSwitch) return;
 
-    /* El panel de series sólo aparece cuando hay más de una serie. */
-    const variasSeries = catalog.series.length > 1;
-    if (seriesPanel) seriesPanel.hidden = !variasSeries;
-    if (homeBody) homeBody.classList.toggle("home__body--single", !variasSeries);
-
-    menuList.innerHTML = "";
-
-    if (!catalog.series.length) {
-      const empty = document.createElement("p");
-      empty.className = "empty";
-      empty.innerHTML = "Añade series en <code>assets/js/catalog.js</code>";
-      menuList.appendChild(empty);
-      return;
-    }
+    seriesSwitch.innerHTML = "";
+    seriesSwitch.hidden = catalog.series.length <= 1;
 
     catalog.series.forEach((s, index) => {
       const button = document.createElement("button");
       button.type = "button";
-      button.className = "menu__item";
+      button.className = "series-chip";
       button.dataset.index = String(index);
-      button.innerHTML =
-        '<span class="menu__index">' + pad(index + 1) + "</span>" +
-        '<span class="menu__label">' + esc(s.title) + "</span>" +
-        '<span class="menu__meta">' + s.seasons.length + " T</span>";
+      button.textContent = s.title;
+      button.addEventListener("click", () => selectSeries(index));
+      seriesSwitch.appendChild(button);
+    });
+  }
 
-      button.addEventListener("mouseenter", () => selectSeries(index));
-      button.addEventListener("focus", () => selectSeries(index));
-      button.addEventListener("click", () => openSeries(s.id));
-
-      menuList.appendChild(button);
+  function updateSeriesChips() {
+    if (!seriesSwitch) return;
+    $$(".series-chip", seriesSwitch).forEach((chip, index) => {
+      const active = index === state.seriesIndex;
+      chip.classList.toggle("is-active", active);
+      chip.setAttribute("aria-pressed", active ? "true" : "false");
     });
   }
 
@@ -348,15 +337,11 @@
       playButton.removeAttribute("title");
     }
 
-    $$(".menu__item", menuList).forEach((item, index) => {
-      const active = index === state.seriesIndex;
-      item.classList.toggle("is-active", active);
-      item.setAttribute("aria-current", active ? "true" : "false");
-    });
+    updateSeriesChips();
   }
 
   function focusMenuItem(index) {
-    const item = $$(".menu__item", menuList)[index];
+    const item = $$(".series-chip", seriesSwitch)[index];
     if (item) item.focus({ preventScroll: true });
   }
 
@@ -744,7 +729,7 @@
 
   window.addEventListener("hashchange", route);
 
-  renderMenu();
+  renderSeriesSwitch();
   renderHero();
   route();
 })();

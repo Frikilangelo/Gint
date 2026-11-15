@@ -154,40 +154,48 @@ a { -webkit-tap-highlight-color: transparent; }
 
 .home__body {
   flex: 1;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(270px, 360px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   gap: clamp(24px, 5vw, 72px);
-  align-items: center;
   padding: clamp(8px, 2vw, 30px) 0;
 }
 
-/* Con una sola serie no hay panel de series: el menú ocupa todo el ancho. */
-.home__body--single {
-  grid-template-columns: minmax(0, 1fr);
+/* ---------- Selector de series ---------- */
+
+.series-switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: clamp(18px, 2.4vw, 26px);
 }
 
-.home__body--single .hero {
-  max-width: none;
+.series-switch[hidden] { display: none; }
+
+.series-chip {
+  padding: 10px 20px;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--dim);
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.16s ease, border-color 0.16s ease, background 0.16s ease;
 }
 
-/* En una sola columna el texto y las temporadas usan todo el ancho. */
-.home__body--single .hero__synopsis,
-.home__body--single .hero__resume {
-  max-width: none;
+.series-chip:hover {
+  color: var(--text);
+  border-color: var(--line-strong);
 }
 
-.home__body--single .hero__seasons {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
-  gap: 12px;
+.series-chip.is-active {
+  background: var(--accent-soft);
+  border-color: rgba(232, 176, 75, 0.55);
+  color: var(--text);
 }
-
-.home__body--single .hero__seasons .season-btn {
-  width: 100%;
-  text-align: center;
-}
-
-.menu[hidden] { display: none; }
 
 .hero { min-width: 0; }
 
@@ -221,7 +229,6 @@ a { -webkit-tap-highlight-color: transparent; }
 
 .hero__synopsis {
   margin: 18px 0 0;
-  max-width: 58ch;
   font-size: 1.06rem;
   color: #cfc9c0;
   display: -webkit-box;
@@ -296,8 +303,15 @@ a { -webkit-tap-highlight-color: transparent; }
 }
 
 .hero__seasons {
-  margin-top: clamp(18px, 2.4vw, 26px);
-  margin-bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+  gap: 12px;
+  margin: clamp(20px, 2.6vw, 28px) 0 0;
+}
+
+.hero__seasons .season-btn {
+  width: 100%;
+  text-align: center;
 }
 
 .hero__resume:empty { display: none; }
@@ -312,88 +326,9 @@ a { -webkit-tap-highlight-color: transparent; }
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent);
-  max-width: 60ch;
 }
 
 .btn__icon { font-size: 0.82rem; }
-
-/* ---------- Lista de series ---------- */
-
-.menu { min-width: 0; }
-
-.menu__heading {
-  margin: 0 0 10px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--line);
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-  color: var(--dim);
-}
-
-.menu__list {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  max-height: min(58vh, 460px);
-  overflow-y: auto;
-  padding-right: 4px;
-}
-
-.menu__item {
-  position: relative;
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 14px;
-  width: 100%;
-  padding: 13px 16px;
-  border: 0;
-  border-left: 2px solid transparent;
-  background: transparent;
-  color: var(--dim);
-  font-family: inherit;
-  font-size: 1rem;
-  text-align: left;
-  cursor: pointer;
-  transition: color 0.16s ease, background 0.16s ease, border-color 0.16s ease, padding-left 0.16s ease;
-}
-
-.menu__item:hover,
-.menu__item.is-active {
-  color: var(--text);
-  border-left-color: var(--accent);
-  background: linear-gradient(90deg, var(--accent-soft), rgba(232, 176, 75, 0));
-  padding-left: 22px;
-}
-
-.menu__index {
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
-  color: var(--dim);
-  opacity: 0.75;
-}
-
-.menu__item.is-active .menu__index { color: var(--accent); opacity: 1; }
-
-.menu__item .menu__label {
-  font-family: var(--serif);
-  font-size: 1.12rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.menu__meta {
-  font-family: var(--mono);
-  font-size: 0.66rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--dim);
-  opacity: 0.7;
-}
 
 /* ---------- Pistas de teclado ---------- */
 
@@ -715,14 +650,12 @@ kbd {
 }
 
 .screen.is-active .hero,
-.screen.is-active .menu,
 .screen.is-active .series__head,
 .screen.is-active .seasons,
 .screen.is-active .episodes {
   animation: rise 0.45s ease both;
 }
 
-.screen.is-active .menu { animation-delay: 0.06s; }
 .screen.is-active .seasons { animation-delay: 0.04s; }
 .screen.is-active .episodes { animation-delay: 0.08s; }
 
@@ -730,19 +663,10 @@ kbd {
 
 @media (max-width: 940px) {
   .home__body {
-    grid-template-columns: minmax(0, 1fr);
-    align-items: start;
+    justify-content: flex-start;
     gap: 28px;
     padding-top: 4px;
   }
-
-  .menu__list {
-    max-height: none;
-    overflow: visible;
-  }
-
-  .menu__item { padding-left: 12px; padding-right: 12px; }
-  .menu__item:hover, .menu__item.is-active { padding-left: 16px; }
 
   .hero__title { font-size: clamp(1.9rem, 8vw, 3rem); }
   .hero__synopsis { -webkit-line-clamp: 3; }
