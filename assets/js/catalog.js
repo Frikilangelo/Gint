@@ -5,22 +5,34 @@
  * ningún otro archivo para añadir series, temporadas o episodios.
  *
  * Cada episodio necesita el enlace de Google Drive del capítulo.
- * Sirve cualquier enlace de archivo compartido como público:
+ * Sirve cualquier enlace de archivo:
  *
  *   https://drive.google.com/file/d/1ZiHyeXTJ_jTqHoIUIH_gMmQxHVhN0J5f/view?usp=drive_link
  *
  * También puedes pegar sólo el ID (1ZiHyeXTJ_jTqHoIUIH_gMmQxHVhN0J5f).
  * Da igual de cuál de las tres cuentas venga el archivo: lo único
- * importante es que cada archivo esté compartido como
- * "Cualquier persona con el enlace".
+ * importante es que tanto la carpeta como los archivos estén
+ * compartidos como "Cualquier persona con el enlace" (Lector),
+ * porque el reproductor entra sin iniciar sesión.
+ *
+ * Carpetas de las tres temporadas (referencia):
+ *   Temporada 1: https://drive.google.com/drive/folders/135fgSXbXNnnMy7pR1kXY5MOz3xhpFJJF
+ *   Temporada 2: https://drive.google.com/drive/folders/1toT8dJlpGUFd-ViX8px11Jl2pHpRDFgn
+ *   Temporada 3: https://drive.google.com/drive/folders/1u0YxUaWVpbmq2onDB-m393tLuJ8wX2dP
  *
  * Campos de un episodio:
- *   number    número del episodio                (obligatorio)
- *   title     título visible                     (opcional)
- *   driveId   enlace o ID de Google Drive        (obligatorio para reproducir)
- *   duration  duración a mostrar, ej. "24 min"    (opcional)
+ *   number    número del episodio                        (obligatorio)
+ *   title     título visible                             (opcional)
+ *   driveId   enlace o ID de Google Drive                (obligatorio para reproducir)
+ *   duration  duración a mostrar, ej. "24 min"           (opcional)
  *   drive     cuenta que lo aloja, ej. "Gintama111111111" (opcional, informativo)
- *   thumb     URL de miniatura propia            (opcional)
+ *   thumb     URL de miniatura propia                    (opcional)
+ *
+ * Ejemplo de un episodio completo:
+ *
+ *   { number: 1, title: "Episodio 1", duration: "24 min",
+ *     drive: "Gintama111111111",
+ *     driveId: "https://drive.google.com/file/d/1ZiHyeXTJ_jTqHoIUIH_gMmQxHVhN0J5f/view?usp=drive_link" }
  *
  * Si un episodio se queda sin driveId, aparece como "Sin enlace"
  * y no se puede reproducir (así puedes ir rellenando poco a poco).
@@ -42,44 +54,17 @@ window.GINT_CATALOG = {
         {
           number: 1,
           title: "Temporada 1",
-          episodes: [
-            {
-              number: 1,
-              title: "Episodio 1",
-              duration: "24 min",
-              drive: "Gintama111111111",
-              driveId: "https://drive.google.com/file/d/1ZiHyeXTJ_jTqHoIUIH_gMmQxHVhN0J5f/view?usp=drive_link"
-            },
-            { number: 2, title: "Episodio 2", duration: "24 min", drive: "Gintama222222222", driveId: "" },
-            { number: 3, title: "Episodio 3", duration: "24 min", drive: "Gintama333333333", driveId: "" }
-          ]
+          episodes: []
         },
         {
           number: 2,
           title: "Temporada 2",
-          episodes: [
-            { number: 1, title: "Episodio 1", duration: "24 min", drive: "Gintama111111111", driveId: "" },
-            { number: 2, title: "Episodio 2", duration: "24 min", drive: "Gintama222222222", driveId: "" }
-          ]
-        }
-      ]
-    },
-    {
-      id: "gintama-peliculas",
-      title: "Gintama · Películas",
-      year: 2010,
-      synopsis:
-        "Las películas de la franquicia, en su propio apartado del menú. " +
-        "Ideal para verlas de un tirón sin tocar las temporadas de la serie.",
-      cover: "",
-      seasons: [
+          episodes: []
+        },
         {
-          number: 1,
-          title: "Películas",
-          episodes: [
-            { number: 1, title: "Película 1", duration: "—", drive: "Gintama111111111", driveId: "" },
-            { number: 2, title: "Película 2", duration: "—", drive: "Gintama333333333", driveId: "" }
-          ]
+          number: 3,
+          title: "Temporada 3",
+          episodes: []
         }
       ]
     }
