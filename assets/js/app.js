@@ -300,7 +300,6 @@
       .filter(Boolean)
       .join(" · ");
     $("#heroSynopsis").textContent = s.synopsis || "";
-    $("#homeCount").textContent = plural(catalog.series.length, "serie", "series");
 
     const art = $("#homeArt");
     const image = s.backdrop || s.cover;
