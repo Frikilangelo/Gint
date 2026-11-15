@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#08090b" />
+<meta name="description" content="Menú interactivo de series: elige temporada y episodio y reproduce desde Google Drive." />
+<title>GINT · Menú interactivo</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20fill%3D%27%2308090b%27%2F%3E%3Ccircle%20cx%3D%2716%27%20cy%3D%2716%27%20r%3D%279%27%20fill%3D%27none%27%20stroke%3D%27%23e8b04b%27%20stroke-width%3D%272%27%2F%3E%3Ccircle%20cx%3D%2716%27%20cy%3D%2716%27%20r%3D%272.5%27%20fill%3D%27%23e8b04b%27%2F%3E%3C%2Fsvg%3E" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<!-- ============ MENÚ PRINCIPAL ============ -->
+<section class="screen screen--home is-active" id="screen-home" aria-label="Menú principal">
+  <div class="backdrop" id="homeArt" aria-hidden="true"></div>
+
+  <div class="screen__inner">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand__mark">GINT</span>
+        <span class="brand__tag">Menú interactivo</span>
+      </div>
+      <div class="topbar__meta" id="homeCount">0 series</div>
+    </header>
+
+    <div class="home__body">
+      <div class="hero">
+        <p class="eyebrow">Selección</p>
+        <h1 class="hero__title" id="heroTitle">—</h1>
+        <p class="hero__meta" id="heroMeta"></p>
+        <p class="hero__synopsis" id="heroSynopsis"></p>
+        <div class="hero__actions">
+          <button class="btn btn--primary" id="btnPlay" type="button">
+            <span class="btn__icon" aria-hidden="true">▶</span><span id="btnPlayLabel">Reproducir</span>
+          </button>
+          <button class="btn" id="btnChapters" type="button">Capítulos</button>
+        </div>
+      </div>
+
+      <nav class="menu" aria-label="Series">
+        <p class="menu__heading">Series</p>
+        <div class="menu__list" id="seriesMenu"></div>
+      </nav>
+    </div>
+
+    <p class="hints">
+      <kbd>↑</kbd><kbd>↓</kbd> navegar · <kbd>Enter</kbd> seleccionar · <kbd>Esc</kbd> volver
+    </p>
+  </div>
+</section>
+
+<!-- ============ CAPÍTULOS ============ -->
+<section class="screen screen--series" id="screen-series" aria-label="Capítulos">
+  <div class="backdrop" id="seriesArt" aria-hidden="true"></div>
+
+  <div class="screen__inner">
+    <header class="topbar">
+      <button class="btn btn--ghost" id="btnBack" type="button">‹ Menú</button>
+      <div class="topbar__meta" id="seriesCount"></div>
+    </header>
+
+    <div class="series__head">
+      <p class="eyebrow" id="seriesEyebrow">Serie</p>
+      <h2 class="series__title" id="seriesTitle"></h2>
+      <p class="hero__synopsis" id="seriesSynopsis"></p>
+    </div>
+
+    <div class="seasons" id="seasonTabs" role="tablist" aria-label="Temporadas"></div>
+    <div class="episodes" id="episodeGrid"></div>
+
+    <p class="hints">
+      <kbd>←</kbd><kbd>→</kbd> episodios · <kbd>Enter</kbd> reproducir · <kbd>Esc</kbd> menú
+    </p>
+  </div>
+</section>
+
+<!-- ============ REPRODUCTOR ============ -->
+<div class="player" id="player" role="dialog" aria-modal="true" aria-label="Reproductor">
+  <div class="player__stage">
+    <iframe
+      id="playerFrame"
+      class="player__frame"
+      src="about:blank"
+      title="Episodio en Google Drive"
+      allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+      allowfullscreen
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+  <div class="player__bar">
+    <div class="player__info">
+      <p class="player__title" id="playerTitle">—</p>
+      <p class="player__sub" id="playerSub"></p>
+    </div>
+    <div class="player__controls">
+      <button class="btn btn--ghost" id="btnPrev" type="button" title="Episodio anterior">‹ Anterior</button>
+      <button class="btn btn--ghost" id="btnNext" type="button" title="Episodio siguiente">Siguiente ›</button>
+      <a class="btn btn--ghost" id="playerDrive" href="#" target="_blank" rel="noopener noreferrer">Abrir en Drive ↗</a>
+      <button class="btn btn--ghost" id="btnFull" type="button">Pantalla completa</button>
+      <button class="btn" id="btnClosePlayer" type="button">✕ Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<div class="grain" aria-hidden="true"></div>
+
+<noscript>
+  <p class="noscript">Activa JavaScript para ver el menú interactivo.</p>
+</noscript>
+
+<script src="assets/js/catalog.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

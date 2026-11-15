@@ -1,0 +1,7 @@
+# Previsualización local (no se publica)
+.preview/
+
+Thumbs.db
+desktop.ini
+.DS_Store
+*.log
