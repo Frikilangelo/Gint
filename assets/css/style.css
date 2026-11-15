@@ -167,7 +167,24 @@ a { -webkit-tap-highlight-color: transparent; }
 }
 
 .home__body--single .hero {
-  max-width: 74ch;
+  max-width: none;
+}
+
+/* En una sola columna el texto y las temporadas usan todo el ancho. */
+.home__body--single .hero__synopsis,
+.home__body--single .hero__resume {
+  max-width: none;
+}
+
+.home__body--single .hero__seasons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 10px;
+}
+
+.home__body--single .hero__seasons .season-btn {
+  width: 100%;
+  text-align: center;
 }
 
 .menu[hidden] { display: none; }
