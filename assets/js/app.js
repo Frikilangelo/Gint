@@ -227,9 +227,9 @@
     playing: null
   };
 
+  const screenCatalog = $("#screen-catalog");
   const screenHome = $("#screen-home");
   const screenSeries = $("#screen-series");
-  const seriesSwitch = $("#seriesSwitch");
   const player = $("#player");
   const playerFrame = $("#playerFrame");
 
@@ -241,43 +241,54 @@
     return catalog.series[state.seriesIndex] || null;
   }
 
-  /* Selector de series: sólo aparece cuando el catálogo tiene más de una. */
-  function renderSeriesSwitch() {
-    if (!seriesSwitch) return;
+  /* Portada de series: una tarjeta por serie, con su imagen y sus datos. */
+  function renderCatalog() {
+    const grid = $("#seriesGrid");
+    if (!grid) return;
 
-    seriesSwitch.innerHTML = "";
-    seriesSwitch.hidden = catalog.series.length <= 1;
+    grid.innerHTML = "";
 
-    catalog.series.forEach((s, index) => {
-      const button = document.createElement("button");
-      button.type = "button";
-      button.className = "series-chip";
-      button.dataset.index = String(index);
-      button.textContent = s.title;
-      button.addEventListener("click", () => selectSeries(index));
-      seriesSwitch.appendChild(button);
+    catalog.series.forEach((s) => {
+      const card = document.createElement("button");
+      card.type = "button";
+      card.className = "serie-card";
+      card.title = "Abrir " + s.title;
+
+      const art = document.createElement("span");
+      art.className = "serie-card__art";
+      const image = s.backdrop || s.cover;
+      if (image) art.style.backgroundImage = 'url("' + image + '")';
+
+      const body = document.createElement("span");
+      body.className = "serie-card__body";
+
+      const title = document.createElement("span");
+      title.className = "serie-card__title";
+      title.textContent = s.title;
+
+      const meta = document.createElement("span");
+      meta.className = "serie-card__meta";
+      meta.textContent = [
+        s.year,
+        plural(s.seasons.length, "temporada", "temporadas"),
+        plural(totalEpisodes(s), "episodio", "episodios")
+      ]
+        .filter(Boolean)
+        .join(" · ");
+
+      body.appendChild(title);
+      body.appendChild(meta);
+      card.appendChild(art);
+      card.appendChild(body);
+      card.addEventListener("click", () => openSeries(s.id));
+      grid.appendChild(card);
     });
   }
 
-  function updateSeriesChips() {
-    if (!seriesSwitch) return;
-    $$(".series-chip", seriesSwitch).forEach((chip, index) => {
-      const active = index === state.seriesIndex;
-      chip.classList.toggle("is-active", active);
-      chip.setAttribute("aria-pressed", active ? "true" : "false");
-    });
-  }
-
-  function selectSeries(index) {
-    if (!catalog.series.length) return;
-    const total = catalog.series.length;
-    state.seriesIndex = ((index % total) + total) % total;
-    renderHero();
-  }
-
-  function renderHero() {
-    const s = currentSeries();
+  function renderHero(s) {
     if (!s) return;
+
+    document.title = s.title + " · GINT";
 
     /* La cabecera lleva el logo de la serie en lugar del título y los datos. */
     $("#heroLogo").alt = s.title;
@@ -335,12 +346,6 @@
       playButton.removeAttribute("title");
     }
 
-    updateSeriesChips();
-  }
-
-  function focusMenuItem(index) {
-    const item = $$(".series-chip", seriesSwitch)[index];
-    if (item) item.focus({ preventScroll: true });
   }
 
   /* ================================================================== */
@@ -541,9 +546,10 @@
   /* ================================================================== */
 
   function showScreen(name) {
+    screenCatalog.classList.toggle("is-active", name === "catalog");
     screenHome.classList.toggle("is-active", name === "home");
     screenSeries.classList.toggle("is-active", name === "series");
-    if (name === "home") document.title = "GINT · Menú interactivo";
+    if (name === "catalog") document.title = "GINT · Series";
   }
 
   function parseRoute() {
@@ -554,7 +560,7 @@
       raw = String(window.location.hash || "").replace(/^#\/?/, "").trim();
     }
 
-    if (!raw) return { view: "home" };
+    if (!raw) return { view: "catalog" };
 
     const parts = raw.split("/").filter(Boolean);
 
@@ -567,29 +573,41 @@
           episode: Number(parts[3])
         };
       }
-      return {
-        view: "series",
-        seriesId: parts[1],
-        season: parts[2] ? Number(parts[2]) : null
-      };
+      if (parts.length === 3) {
+        return {
+          view: "series",
+          seriesId: parts[1],
+          season: Number(parts[2])
+        };
+      }
+      return { view: "serie", seriesId: parts[1] };
     }
 
-    return { view: "home" };
+    return { view: "catalog" };
   }
 
   function route() {
     const r = parseRoute();
 
-    if (r.view === "home") {
+    if (r.view === "catalog") {
       closePlayer();
-      showScreen("home");
-      renderHero();
+      showScreen("catalog");
+      renderCatalog();
       return;
     }
 
     const s = catalog.series.filter((item) => item.id === r.seriesId)[0];
     if (!s) {
       navigate("#/");
+      return;
+    }
+
+    state.seriesIndex = catalog.series.indexOf(s);
+
+    if (r.view === "serie") {
+      closePlayer();
+      showScreen("home");
+      renderHero(s);
       return;
     }
 
@@ -629,11 +647,6 @@
   /* Teclado                                                             */
   /* ================================================================== */
 
-  function moveSelection(delta) {
-    selectSeries(state.seriesIndex + delta);
-    focusMenuItem(state.seriesIndex);
-  }
-
   function moveEpisodeFocus(key) {
     const cards = $$(".ep:not(.ep--pending)", $("#episodeGrid"));
     if (!cards.length) return;
@@ -667,20 +680,12 @@
 
     if (event.altKey || event.ctrlKey || event.metaKey) return;
 
+    if (screenCatalog.classList.contains("is-active")) return;
+
     if (screenHome.classList.contains("is-active")) {
-      if (key === "ArrowDown" || key === "ArrowRight") {
+      if (key === "Escape") {
         event.preventDefault();
-        moveSelection(1);
-      } else if (key === "ArrowUp" || key === "ArrowLeft") {
-        event.preventDefault();
-        moveSelection(-1);
-      } else if (
-        key === "Enter" &&
-        !(event.target && event.target.closest && event.target.closest("button, a"))
-      ) {
-        event.preventDefault();
-        const s = currentSeries();
-        if (s) openSeries(s.id);
+        navigate("#/");
       }
       return;
     }
@@ -688,7 +693,8 @@
     if (screenSeries.classList.contains("is-active")) {
       if (key === "Escape") {
         event.preventDefault();
-        navigate("#/");
+        const s = currentSeries();
+        navigate(s ? "#/serie/" + s.id : "#/");
       } else if (
         key === "ArrowRight" ||
         key === "ArrowLeft" ||
@@ -714,14 +720,18 @@
   });
 
 
-  $("#btnBack").addEventListener("click", () => navigate("#/"));
+  $("#btnBack").addEventListener("click", () => {
+    const s = currentSeries();
+    navigate(s ? "#/serie/" + s.id : "#/");
+  });
+
+  $("#btnCatalog").addEventListener("click", () => navigate("#/"));
 
   $("#btnClosePlayer").addEventListener("click", exitPlayer);
   $("#btnFull").addEventListener("click", saveFullscreen);
 
   window.addEventListener("hashchange", route);
 
-  renderSeriesSwitch();
-  renderHero();
+  renderCatalog();
   route();
 })();

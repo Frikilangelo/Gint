@@ -11,15 +11,28 @@
 </head>
 <body>
 
-<!-- ============ MENÚ PRINCIPAL ============ -->
-<section class="screen screen--home is-active" id="screen-home" aria-label="Menú principal">
+<!-- ============ SERIES ============ -->
+<section class="screen screen--catalog is-active" id="screen-catalog" aria-label="Series">
+  <div class="backdrop" id="catalogArt" aria-hidden="true"></div>
+
+  <div class="screen__inner">
+    <div class="catalog">
+      <div class="catalog__grid" id="seriesGrid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PORTADA DE LA SERIE ============ -->
+<section class="screen screen--home" id="screen-home" aria-label="Portada de la serie">
   <div class="backdrop" id="homeArt" aria-hidden="true"></div>
 
   <div class="screen__inner">
+    <header class="topbar">
+      <button class="btn btn--ghost" id="btnCatalog" type="button">‹ Series</button>
+    </header>
+
     <div class="home__body">
       <div class="hero">
-        <div class="series-switch" id="seriesSwitch" hidden></div>
-
         <img class="hero__logo" id="heroLogo" src="assets/logo.png" alt="Gintama" />
         <p class="hero__synopsis" id="heroSynopsis"></p>
         <div class="hero__actions">
@@ -41,7 +54,7 @@
 
   <div class="screen__inner">
     <header class="topbar">
-      <button class="btn btn--ghost" id="btnBack" type="button">‹ Menú</button>
+      <button class="btn btn--ghost" id="btnBack" type="button">‹ Portada</button>
       <div class="topbar__meta" id="seriesCount"></div>
     </header>
 
