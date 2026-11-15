@@ -716,10 +716,6 @@
     navigate("#/serie/" + s.id + "/" + target.season + "/" + target.episode);
   });
 
-  $("#btnChapters").addEventListener("click", () => {
-    const s = currentSeries();
-    if (s) openSeries(s.id);
-  });
 
   $("#btnBack").addEventListener("click", () => navigate("#/"));
 
