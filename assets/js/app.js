@@ -197,8 +197,10 @@
   }
 
   /*
-   * Posición recordada: el capítulo siguiente al último que se abrió.
-   * Si ese era el último de la serie, se ofrece el mismo.
+   * Posición recordada: el último capítulo que se abrió, que es donde el
+   * usuario lo dejó. El visor de Drive no informa del minuto, así que el
+   * capítulo vuelve a empezar; para pasar al siguiente está "Siguiente"
+   * en el reproductor.
    * Sin historial, el primero disponible.
    */
   function resumeTarget(s) {
@@ -211,9 +213,7 @@
       const index = list.findIndex(
         (item) => item.season + "-" + item.episode === entry.last
       );
-      if (index !== -1) {
-        return list[index + 1] || list[index];
-      }
+      if (index !== -1) return list[index];
     }
 
     return list[0];
