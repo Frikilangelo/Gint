@@ -333,33 +333,6 @@ a { -webkit-tap-highlight-color: transparent; }
 
 .btn__icon { font-size: 0.82rem; }
 
-/* ---------- Pistas de teclado ---------- */
-
-.hints {
-  margin: clamp(16px, 3vw, 30px) 0 0;
-  padding-top: 14px;
-  border-top: 1px solid var(--line);
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(168, 162, 154, 0.75);
-}
-
-kbd {
-  display: inline-block;
-  min-width: 18px;
-  margin-right: 3px;
-  padding: 1px 5px;
-  border: 1px solid var(--line);
-  border-radius: 3px;
-  background: rgba(255, 255, 255, 0.05);
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  text-align: center;
-  color: var(--text);
-}
-
 /* ---------- Pantalla de capítulos ---------- */
 
 .series__head { margin-bottom: clamp(18px, 2.4vw, 26px); }
@@ -682,7 +655,6 @@ kbd {
   .ep__title { font-size: 0.85rem; }
   .player__controls { width: 100%; }
   .player__controls .btn { flex: 1 1 auto; justify-content: center; }
-  .hints { font-size: 0.58rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
