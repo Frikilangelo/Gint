@@ -15,10 +15,11 @@
  * compartidos como "Cualquier persona con el enlace" (Lector),
  * porque el reproductor entra sin iniciar sesión.
  *
- * Carpetas de las tres temporadas (referencia):
+ * Carpetas de las temporadas (referencia):
  *   Temporada 1: https://drive.google.com/drive/folders/135fgSXbXNnnMy7pR1kXY5MOz3xhpFJJF
  *   Temporada 2: https://drive.google.com/drive/folders/1toT8dJlpGUFd-ViX8px11Jl2pHpRDFgn
  *   Temporada 3: https://drive.google.com/drive/folders/1u0YxUaWVpbmq2onDB-m393tLuJ8wX2dP
+ *   Temporada 4: https://drive.google.com/drive/folders/1hTYd8bG6CbvxuFTiM21F8ltMCh301JvQ
  *
  * Campos de un episodio:
  *   number    número del episodio                        (obligatorio)
@@ -64,6 +65,11 @@ window.GINT_CATALOG = {
         {
           number: 3,
           title: "Temporada 3",
+          episodes: []
+        },
+        {
+          number: 4,
+          title: "Temporada 4",
           episodes: []
         }
       ]
