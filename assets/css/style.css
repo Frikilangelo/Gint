@@ -178,8 +178,8 @@ a { -webkit-tap-highlight-color: transparent; }
 
 .home__body--single .hero__seasons {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+  gap: 12px;
 }
 
 .home__body--single .hero__seasons .season-btn {
@@ -444,14 +444,14 @@ kbd {
 }
 
 .season-btn {
-  padding: 12px 22px;
+  padding: 17px 26px;
   border: 1px solid var(--line);
   border-radius: 2px;
   background: transparent;
   color: var(--dim);
   font-family: var(--mono);
-  font-size: 0.76rem;
-  letter-spacing: 0.16em;
+  font-size: 0.94rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   cursor: pointer;
   transition: color 0.16s ease, border-color 0.16s ease, background 0.16s ease;
