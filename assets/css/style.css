@@ -303,12 +303,13 @@ a { -webkit-tap-highlight-color: transparent; }
 .hero__resume:empty { display: none; }
 
 .hero__resume {
-  margin: 18px 0 0;
-  padding-left: 12px;
-  border-left: 2px solid var(--accent);
+  margin: 22px 0 0;
+  padding-left: 16px;
+  border-left: 3px solid var(--accent);
   font-family: var(--mono);
-  font-size: 0.76rem;
-  letter-spacing: 0.12em;
+  font-size: 1.52rem;
+  line-height: 1.35;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent);
   max-width: 60ch;
