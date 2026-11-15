@@ -229,6 +229,7 @@ a { -webkit-tap-highlight-color: transparent; }
 
 .hero__synopsis {
   margin: 18px 0 0;
+  max-width: 50%;
   font-size: 1.06rem;
   color: #cfc9c0;
   display: -webkit-box;
@@ -682,7 +683,7 @@ kbd {
   }
 
   .hero__title { font-size: clamp(1.9rem, 8vw, 3rem); }
-  .hero__synopsis { -webkit-line-clamp: 3; }
+  .hero__synopsis { max-width: 100%; -webkit-line-clamp: 3; }
   .hero .hero__seasons { max-width: 100%; }
 }
 }
