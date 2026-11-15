@@ -56,7 +56,6 @@
   }
 
   const driveEmbed = (id) => "https://drive.google.com/file/d/" + id + "/preview";
-  const driveView = (id) => "https://drive.google.com/file/d/" + id + "/view";
 
   /* ================================================================== */
   /* Catálogo                                                            */
@@ -495,8 +494,6 @@
     ]
       .filter(Boolean)
       .join(" · ");
-
-    $("#playerDrive").href = driveView(episode.videoId);
 
     setNavButton("#btnPrev", list[index - 1], s);
     setNavButton("#btnNext", list[index + 1], s);
