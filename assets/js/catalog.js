@@ -1,7 +1,7 @@
 /*
  * GINT · CATÁLOGO
  * ---------------------------------------------------------------
- * Generado a partir de las nueve carpetas públicas de Google Drive
+ * Generado a partir de las carpetas públicas de Google Drive
  * (cuenta Gintama111111111). Cada entrada es un episodio:
  *
  *   { number: 12, title: "Título del capítulo",
@@ -32,9 +32,7 @@ window.GINT_CATALOG = {
       title: "Gintama",
       year: 2006,
       synopsis:
-        "Edo, una época en la que los samuráis perdieron sus espadas ante los invasores Amanto. " +
-        "Gintoki, un samurái de pelo plateado, sobrevive haciendo encargos de todo tipo junto a " +
-        "Shinpachi y Kagura en una casa que no es exactamente un salón de té.",
+        "Edo, una época en la que los samuráis perdieron sus espadas ante los invasores Amanto. Gintoki, un samurái de pelo plateado, sobrevive haciendo encargos de todo tipo junto a Shinpachi y Kagura en una casa que no es exactamente un salón de té.",
       cover: "",
       backdrop: "assets/gintamaBG.jpg",
       seasons: [
@@ -432,6 +430,6 @@ window.GINT_CATALOG = {
           ]
         },
       ]
-    }
+    },
   ]
 };
