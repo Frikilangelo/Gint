@@ -466,19 +466,8 @@ window.GINT_CATALOG = {
             { number: 13, title: "Dun Dun", driveId: "1rtlXq751CSAGxkKXNHE2QnIa1EobXV85" },
           ]
         },
-      ]
-    },
-    {
-      id: "peliculas",
-      title: "Gintama · Películas y OVAs",
-      year: 0,
-      synopsis:
-        "Largometrajes, OVAs y especiales de la franquicia, en orden de historia. Ideales para ver entre temporada y temporada.",
-      cover: "",
-      backdrop: "assets/gintamaBG.jpg",
-      seasons: [
         {
-          number: 1,
+          number: 12,
           title: "Películas y OVAs",
           episodes: [
             { number: 1, title: "Película · Shinyaku Benizakura-hen (remaster de los capítulos 58 a 61)", driveId: "1Ub4UmN9YMBsLmtPwcnX0SWpoohOYHwEp" },

@@ -327,8 +327,13 @@
       const episode = season
         ? season.episodes.filter((item) => item.number === target.episode)[0]
         : null;
+      /* Las secciones con nombre propio (películas, OVAs) se citan por su nombre. */
+      const sectionName =
+        season && !/^temporada\s+\d+$/i.test(season.title)
+          ? season.title
+          : "T" + target.season;
       const where =
-        "T" + target.season + " · E" + pad(target.episode) +
+        sectionName + " · E" + pad(target.episode) +
         (episode ? " — " + episode.title : "");
       note.textContent = (watched ? "Continúa en " : "Empieza por ") + where;
       playButton.title = (watched ? "Continúa en " : "Empieza por ") + where;
