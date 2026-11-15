@@ -115,32 +115,8 @@ a { -webkit-tap-highlight-color: transparent; }
   margin-bottom: clamp(18px, 3vw, 40px);
 }
 
-.brand {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  min-width: 0;
-}
-
-.brand__mark {
-  font-family: var(--serif);
-  font-size: 1.4rem;
-  letter-spacing: 0.34em;
-  text-transform: uppercase;
-  color: var(--text);
-}
-
-.brand__tag {
-  font-family: var(--mono);
-  font-size: 0.66rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--dim);
-  padding-left: 12px;
-  border-left: 1px solid var(--line);
-}
-
 .topbar__meta {
+  margin-left: auto;
   font-family: var(--mono);
   font-size: 0.68rem;
   letter-spacing: 0.18em;
@@ -713,7 +689,6 @@ kbd {
 
 @media (max-width: 600px) {
   .screen__inner { padding: 16px 16px 14px; }
-  .brand__tag { display: none; }
   .episodes { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
   .ep__title { font-size: 0.85rem; }
   .player__controls { width: 100%; }
