@@ -108,6 +108,7 @@
         year: item.year ? String(item.year) : "",
         synopsis: item.synopsis || item.description || "",
         cover: item.cover || item.poster || "",
+        logo: item.logo || "",
         backdrop: item.backdrop || item.cover || item.poster || "",
         seasons
       };
@@ -290,8 +291,21 @@
 
     document.title = s.title + " · GINT";
 
-    /* La cabecera lleva el logo de la serie en lugar del título y los datos. */
-    $("#heroLogo").alt = s.title;
+    /* La cabecera lleva el logo de la serie; si no tiene, se escribe el título. */
+    const logo = $("#heroLogo");
+    const titleEl = $("#heroTitle");
+    if (s.logo) {
+      logo.setAttribute("src", s.logo);
+      logo.alt = s.title;
+      logo.hidden = false;
+      if (titleEl) titleEl.hidden = true;
+    } else {
+      logo.hidden = true;
+      if (titleEl) {
+        titleEl.textContent = s.title;
+        titleEl.hidden = false;
+      }
+    }
     $("#heroSynopsis").textContent = s.synopsis || "";
 
     const art = $("#homeArt");

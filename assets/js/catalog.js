@@ -34,6 +34,7 @@ window.GINT_CATALOG = {
       synopsis:
         "Edo, una época en la que los samuráis perdieron sus espadas ante los invasores Amanto. Gintoki, un samurái de pelo plateado, sobrevive haciendo encargos de todo tipo junto a Shinpachi y Kagura en una casa que no es exactamente un salón de té.",
       cover: "",
+      logo: "assets/logo.png",
       backdrop: "assets/gintamaBG.jpg",
       seasons: [
         {
@@ -478,6 +479,49 @@ window.GINT_CATALOG = {
             { number: 6, title: "Love Potion 02 · después de la temporada 7", driveId: "1wKexQ2t9rVzr5Th29BbEXclnC_mibEIo" },
             { number: 7, title: "OVA · Post Love Potion (2015)", driveId: "1YrD8xzUYg1xitFB0o51AmVTqDfcrYuW3" },
             { number: 8, title: "Película · Gintama: The Final (2021, el final de la historia)", driveId: "1p6D7coVu9Vr2rmVJzuE_ve95EPKvWBSP" },
+          ]
+        },
+      ]
+    },
+    {
+      id: "saber-marionette-j",
+      title: "Saber Marionette J",
+      year: 1996,
+      synopsis:
+        "En Terra II, un planeta en el que solo viven hombres, Otaru Mamiya sobrevive en Ciudad Japonés hasta que encuentra tres marionetas muy distintas a las demás: Lime, Cherry y Bloodberry. Con ellas descubre algo que ese mundo había perdido: las emociones. Y no es lo único que se ha perdido.",
+      cover: "",
+      logo: "",
+      backdrop: "",
+      seasons: [
+        {
+          number: 1,
+          title: "Temporada 1",
+          episodes: [
+            { number: 1, title: "Episodio 1", driveId: "176MRKce8e23p6bmUWfFMni-6Ami_aZuu" },
+            { number: 2, title: "Episodio 2", driveId: "1oLplHwCuTbpbF0_GZ0L7mVLYtXw0HrLX" },
+            { number: 3, title: "Episodio 3", driveId: "1JON9NaE7mzBygF6XiSlBJkvz5YqqA5ld" },
+            { number: 4, title: "Episodio 4", driveId: "1kA6uAFn80y53uy_iKYmX13xDNSEkWymt" },
+            { number: 5, title: "Episodio 5", driveId: "1lEkonAO2nwaCDU3Doq92gy1_siNf2VJi" },
+            { number: 6, title: "Episodio 6", driveId: "1O8KUKZ9Zb8-H_yYc9ckDalrK6F2X5f2Y" },
+            { number: 7, title: "Episodio 7", driveId: "1Hw6iGOAr9HEhqjZIi2RfXy8EaAIOcXqn" },
+            { number: 8, title: "Episodio 8", driveId: "1eK00E0H8eO7BusYc-4s0ZisV8cfLxkUD" },
+            { number: 9, title: "Episodio 9", driveId: "1Ihlw6tBXu1kDi7ME33seVhu5xETmpCTy" },
+            { number: 10, title: "Episodio 10", driveId: "1xuZkO1fIRG-52JxuuBYz0vCTSs6IrvrI" },
+            { number: 11, title: "Episodio 11", driveId: "1JoSj2Kewgaw9RZjeZEj2v5yZA08Xy09h" },
+            { number: 12, title: "Episodio 12", driveId: "1U_FBg9yTv8OFjOcZ5C-kPAgfXJoNXOIz" },
+            { number: 13, title: "Episodio 13", driveId: "13ULycC2JbvP0wTaIk2QrKE4juPLvcnn9" },
+            { number: 14, title: "Episodio 14", driveId: "1pZjmYNzwb_0pBKPnJtZbuSq62q5g_Nsi" },
+            { number: 15, title: "Episodio 15", driveId: "1kgiPjjtok1LrT25ZTJt6zexku8hxbAJa" },
+            { number: 16, title: "Episodio 16", driveId: "1SqosTnELAURXEE8JKzb2FFaCpiVx0bak" },
+            { number: 17, title: "Episodio 17", driveId: "1DmEvEoVAKIjIxH5dYfRT6xrBWmL8asBh" },
+            { number: 18, title: "Episodio 18", driveId: "1fUX8-chFWwgPuHnPQpr_oyOnnSndWReS" },
+            { number: 19, title: "Episodio 19", driveId: "1sugjyBjfRe-fgTKWrNUq9yUWJrM7H2rQ" },
+            { number: 20, title: "Episodio 20", driveId: "1fuXWkranatpjucmfEaU4VASx8dK_MSpR" },
+            { number: 21, title: "Episodio 21", driveId: "1MYl1j4vH-rYniMP-FKRJsdD_LybFsj6o" },
+            { number: 22, title: "Episodio 22", driveId: "1ttqMLPv0vDDwXhQvi6o0W4kCBTll7EPE" },
+            { number: 23, title: "Episodio 23", driveId: "1Xw1123Y3BEV8MXVly3xhfpC63p6_TebJ" },
+            { number: 24, title: "Episodio 24", driveId: "1-b4I7ibEkuA2D0qrX74P--FPGpo2GXGO" },
+            { number: 25, title: "Episodio 25", driveId: "1T0EOHPuRVKIFLhzSyasVJ76XEy3LySNw" },
           ]
         },
       ]

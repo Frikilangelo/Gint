@@ -203,7 +203,7 @@ a { -webkit-tap-highlight-color: transparent; }
 .serie-card__art {
   display: block;
   aspect-ratio: 16 / 9;
-  background: #14161b center / cover no-repeat;
+  background: linear-gradient(135deg, #1d2027, #0c0e12) center / cover no-repeat;
 }
 
 .serie-card__body {
@@ -245,6 +245,21 @@ a { -webkit-tap-highlight-color: transparent; }
   height: clamp(300px, 30vw, 480px);
   margin: 0;
   filter: drop-shadow(0 14px 34px rgba(0, 0, 0, 0.55));
+}
+
+.hero__logo[hidden] { display: none; }
+
+/* Series sin logo: el título hace de cabecera. */
+.hero__title {
+  margin: 0;
+  max-width: 50%;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2.8rem, 6.4vw, 5.4rem);
+  line-height: 1.03;
+  letter-spacing: -0.015em;
+  color: #f2ece2;
+  text-shadow: 0 12px 34px rgba(0, 0, 0, 0.6);
 }
 
 .hero__synopsis {
@@ -676,6 +691,7 @@ a { -webkit-tap-highlight-color: transparent; }
   }
 
   .hero__logo { height: clamp(220px, 44vw, 340px); }
+  .hero__title { max-width: 100%; font-size: clamp(2rem, 9vw, 3.2rem); }
   .hero__synopsis { max-width: 100%; -webkit-line-clamp: 3; }
   .hero .hero__seasons { max-width: 100%; }
 }
