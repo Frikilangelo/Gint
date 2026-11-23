@@ -491,7 +491,7 @@ window.GINT_CATALOG = {
         "En Terra II, un planeta en el que solo viven hombres, Otaru Mamiya sobrevive en Ciudad Japonés hasta que encuentra tres marionetas muy distintas a las demás: Lime, Cherry y Bloodberry. Con ellas descubre algo que ese mundo había perdido: las emociones. Y no es lo único que se ha perdido.",
       cover: "",
       logo: "",
-      backdrop: "",
+      backdrop: "assets/SaberMJBG.jpg",
       seasons: [
         {
           number: 1,
