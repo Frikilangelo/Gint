@@ -538,8 +538,8 @@ window.GINT_CATALOG = {
       synopsis:
         "El Imperio del Pelo Calvo quiere dejar calva a toda la humanidad y solo un hombre puede evitarlo: Bobobo-bo Bo-bobo, un guerrero con un afro descomunal que pelea con el arte marcial del pelo y con cualquier cosa que se le cruce por la cabeza. A su lado, Beauty, Gasser y Don Patch intentan que la misión tenga algún sentido, cosa que casi nunca ocurre.",
       cover: "",
-      logo: "",
-      backdrop: "",
+      logo: "assets/Bobobo_Japanese_Logo.webp",
+      backdrop: "assets/BoboboBG.jpg",
       provider: "mega",
       seasons: [
         {
