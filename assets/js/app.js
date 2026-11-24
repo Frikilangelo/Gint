@@ -56,6 +56,16 @@
   }
 
   const driveEmbed = (id) => "https://drive.google.com/file/d/" + id + "/preview";
+  const megaEmbed = (id, key) => "https://mega.nz/embed/" + id + (key ? "#" + key : "");
+
+  /* Cada episodio trae el visor que le toca: Drive o Mega. */
+  const embedUrl = (driveId, megaId, megaKey) => {
+    if (driveId) return driveEmbed(driveId);
+    if (megaId && /^[A-Za-z0-9_-]{6,}$/.test(String(megaId))) {
+      return megaEmbed(megaId, megaKey ? String(megaKey) : "");
+    }
+    return "";
+  };
 
   /* ================================================================== */
   /* Catálogo                                                            */
@@ -89,7 +99,8 @@
                 duration: episode.duration ? String(episode.duration) : "",
                 drive: episode.drive ? String(episode.drive) : "",
                 thumb: episode.thumb || episode.image || "",
-                videoId: parseDriveId(link)
+                videoId: parseDriveId(link),
+                embed: embedUrl(parseDriveId(link), episode.megaId, episode.megaKey)
               };
             })
             .sort((a, b) => a.number - b.number);
@@ -127,7 +138,7 @@
     const list = [];
     s.seasons.forEach((season) => {
       season.episodes.forEach((episode) => {
-        if (episode.videoId) {
+        if (episode.embed) {
           list.push({
             season: season.number,
             episode: episode.number,
@@ -432,7 +443,7 @@
 
   function episodeCard(s, season, episode, episodeIndex) {
     const seen = isSeen(s.id, season.number, episode.number);
-    const playable = !!episode.videoId;
+    const playable = !!episode.embed;
     const hue = (episodeIndex * 47 + 22) % 360;
     const image = episode.thumb || s.cover || "";
 
@@ -475,7 +486,7 @@
       });
     } else {
       button.disabled = true;
-      button.title = 'Falta el enlace de Google Drive de este episodio en "assets/js/catalog.js"';
+      button.title = 'Falta el enlace de este episodio en "assets/js/catalog.js"';
     }
 
     return button;
@@ -493,7 +504,7 @@
     if (!season) return;
 
     const episode = season.episodes.filter((item) => item.number === Number(episodeNumber))[0];
-    if (!episode || !episode.videoId) return;
+    if (!episode || !episode.embed) return;
 
     const list = playableList(s);
     const index = list.findIndex(
@@ -502,7 +513,7 @@
 
     state.playing = { seriesId: s.id, season: season.number };
 
-    playerFrame.src = driveEmbed(episode.videoId);
+    playerFrame.src = episode.embed;
 
     $("#playerTitle").textContent = s.title + " — " + episode.title;
     $("#playerSub").textContent = [

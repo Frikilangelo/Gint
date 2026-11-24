@@ -7,6 +7,9 @@
  *   { number: 12, title: "Título del capítulo",
  *     driveId: "https://drive.google.com/file/d/ID/view?usp=drive_link" }
  *
+ * Las series alojadas en Mega llevan en su lugar megaId (handle del archivo)
+ * y megaKey (su clave), y se reproducen con el visor público mega.nz/embed.
+ *
  * Campos admitidos:
  *   number    número del episodio                        (obligatorio)
  *   title     título visible                             (opcional)
@@ -36,6 +39,7 @@ window.GINT_CATALOG = {
       cover: "",
       logo: "assets/logo.png",
       backdrop: "assets/gintamaBG.jpg",
+      provider: "drive",
       seasons: [
         {
           number: 1,
@@ -492,6 +496,7 @@ window.GINT_CATALOG = {
       cover: "",
       logo: "assets/logoM.png",
       backdrop: "assets/SaberMJBG.jpg",
+      provider: "drive",
       seasons: [
         {
           number: 1,
@@ -522,6 +527,101 @@ window.GINT_CATALOG = {
             { number: 23, title: "Episodio 23", driveId: "1Xw1123Y3BEV8MXVly3xhfpC63p6_TebJ" },
             { number: 24, title: "Episodio 24", driveId: "1-b4I7ibEkuA2D0qrX74P--FPGpo2GXGO" },
             { number: 25, title: "Episodio 25", driveId: "1T0EOHPuRVKIFLhzSyasVJ76XEy3LySNw" },
+          ]
+        },
+      ]
+    },
+    {
+      id: "bobobo-bo-bobobo",
+      title: "Bobobo-bo Bo-bobo",
+      year: 2003,
+      synopsis:
+        "El Imperio del Pelo Calvo quiere dejar calva a toda la humanidad y solo un hombre puede evitarlo: Bobobo-bo Bo-bobo, un guerrero con un afro descomunal que pelea con el arte marcial del pelo y con cualquier cosa que se le cruce por la cabeza. A su lado, Beauty, Gasser y Don Patch intentan que la misión tenga algún sentido, cosa que casi nunca ocurre.",
+      cover: "",
+      logo: "",
+      backdrop: "",
+      provider: "mega",
+      seasons: [
+        {
+          number: 1,
+          title: "Temporada 1",
+          episodes: [
+            { number: 1, title: "Episodio 1", megaId: "GghwFAIY", megaKey: "JlxdMxiRmTjC_hSWFRnY23fYqr4rckHGsdUjBnB9XVQ" },
+            { number: 2, title: "Episodio 2", megaId: "39wEyCTD", megaKey: "fvnCCBjjOKdcISgr632QEz_cj0djOG1YOKCyd_6wlWs" },
+            { number: 3, title: "Episodio 3", megaId: "etgQEQ7J", megaKey: "cRscayzCKdHP4NuCxrc2qnrQkNM8KD7h_FtH_9gvjAk" },
+            { number: 4, title: "Episodio 4", megaId: "K150GKoZ", megaKey: "DMwTkmGGFrvbiiDD2tJCbB3Qn5lUMFVk1FWorqfTa6Y" },
+            { number: 5, title: "Episodio 5", megaId: "Pk4ikaBL", megaKey: "Ik_gOnBZvaRZ7a8z4riGlnBTui1fPyFDAfiWHPWiMrY" },
+            { number: 6, title: "Episodio 6", megaId: "GwwmSKoI", megaKey: "CeyYJlycLqQY-eK0SV22HCwT3jpBa1urN4ibSkXsbPA" },
+            { number: 7, title: "Episodio 7", megaId: "q0w0wKZa", megaKey: "UODlmGlTVnfcIDasuV1n_QZBkX9xODw5id1su-CGmow" },
+            { number: 8, title: "Episodio 8", megaId: "GohCGSDI", megaKey: "eAbu_EybeIWS6BAay2XNhC-InpMBwu3RudmIgNMd7II" },
+            { number: 9, title: "Episodio 9", megaId: "vt4W2SbC", megaKey: "C0pbgDUne6i4OjgTJzRnP2uzh75-rJPSo8vVZBJ1xL0" },
+            { number: 10, title: "Episodio 10", megaId: "q4owDaLB", megaKey: "YW5MkFral5fqpnMexzZ0fkSoBo1fQDQ5jYsZuceU-aA" },
+            { number: 11, title: "Episodio 11", megaId: "u4gQSIQA", megaKey: "WoXWj3-_wRISj5KZLArJXCPwaohWTy_-J6MUcym8EA0" },
+            { number: 12, title: "Episodio 12", megaId: "T5gyQKIb", megaKey: "JaHZkGZytOVhjuuQBTf1HXM_FAF9ADyOF1yK-C_6WaA" },
+            { number: 13, title: "Episodio 13", megaId: "KkgQAa4T", megaKey: "SOrff3z5d9V5FI51rVFKsWuap41u2_ElKYUx0pShNZk" },
+            { number: 14, title: "Episodio 14", megaId: "vkpWlShA", megaKey: "MJ4kixJELPXt7KqG4tsKbE5i_StBETDTyukaBKuAna0" },
+            { number: 15, title: "Episodio 15", megaId: "GhwQ1SQC", megaKey: "TvpGEnTUXFBSd72Px7sb-kuota1tjoG0eI8yT6HP3u8" },
+            { number: 16, title: "Episodio 16", megaId: "Cwh0haRR", megaKey: "bhi1eXw1V_WbFen3eQSxZEuxgwlNiCp2mvLeiSg0rCI" },
+            { number: 17, title: "Episodio 17", megaId: "284AgIyL", megaKey: "Ww63G2SrKOh0nr3Me0gO1VCMkqEDymlGWufuVwsX2ck" },
+            { number: 18, title: "Episodio 18", megaId: "KhwigCiC", megaKey: "U-PUARbIC5HjVC2fwuhrQkdTNp5qhA9whFy1sZljxYo" },
+            { number: 19, title: "Episodio 19", megaId: "q1w0Ca5Q", megaKey: "F5BDLyJ2mmKXDP1Mf_K7bQKLi-Ekfmud-6X5aBSat4A" },
+            { number: 20, title: "Episodio 20", megaId: "a44ARI4J", megaKey: "N06jS2nA4NGgs_4wub9tZmoeCmRuPt3Qqb4oZqP7xdU" },
+            { number: 21, title: "Episodio 21", megaId: "y0w22aTZ", megaKey: "LYTIPCgEDwsEYVeBNnKWPmG4GLBP8XRMc3uJkV8H4lo" },
+            { number: 22, title: "Episodio 22", megaId: "m8gkiARa", megaKey: "C-MqsQdg6kSouTQlSpNYimvpJVZLoRrIukjaFD-Gj-8" },
+            { number: 23, title: "Episodio 23", megaId: "uw5yhaBT", megaKey: "IQTYJQOOGpMyENMeZMUJZx2MV-haCe3FVBCOoiJkGlM" },
+            { number: 24, title: "Episodio 24", megaId: "e9gEHKCB", megaKey: "RopP6wa8suod7ZnyECYMjg7uDDVAng_EbtmAQHq9zUI" },
+            { number: 25, title: "Episodio 25", megaId: "28gC2YqL", megaKey: "a7y3mWFnQ5QFdPdoSg_hvBSZLxYtayUXYDxCuCpjhpU" },
+            { number: 26, title: "Episodio 26", megaId: "DppmQYaD", megaKey: "DozDhV4Ky-n5gQhI33OeDGKrkcxHoia34-unqoK8ZUQ" },
+            { number: 27, title: "Episodio 27", megaId: "OhpGmQaD", megaKey: "B2Kt1WYPu96qf3nA9LrtFxqSbzs7DuRM6dmj1_ZvzME" },
+            { number: 28, title: "Episodio 28", megaId: "yxgUBSZZ", megaKey: "ZiZvbw5oOLuyBpMYZQ-PsHK07bd3YnGTgL9TnXqvKk4" },
+            { number: 29, title: "Episodio 29", megaId: "H0oiQA4Q", megaKey: "UyMN0A-ora5S7Y-nHqAwhVSZ0qlxLCciBTa_6A3vSlo" },
+            { number: 30, title: "Episodio 30", megaId: "qhxSjQpb", megaKey: "CTE07zdPFj6-3ASlbmK2HWCCvXdLILZnsbrU7llA644" },
+            { number: 31, title: "Episodio 31", megaId: "a8o00aib", megaKey: "DYDxu05t9xuD0_xR6vD9OXVOz4oZxCJKs01jHoYQq_c" },
+            { number: 32, title: "Episodio 32", megaId: "H8oy0aZR", megaKey: "J-3Bsn330SVfmckleD87W0SBgc52FkC2CEls_nHSiz8" },
+            { number: 33, title: "Episodio 33", megaId: "bo4wkaLJ", megaKey: "QFRC5CkrXhHVl144iyRu1TPgDmJk2n1RomlIZYA_8zA" },
+            { number: 34, title: "Episodio 34", megaId: "2gwklQQQ", megaKey: "J5uMDBMQ77fHKYUKSs5NHAoQbTNzIi98jiIdUleqOrY" },
+            { number: 35, title: "Episodio 35", megaId: "vwwGySyS", megaKey: "UjhRxyqMoV7eY8hEPnvO-jcHQxRv0XqXsJLMmz4endA" },
+            { number: 36, title: "Episodio 36", megaId: "X85G0aqR", megaKey: "EytiqlKS-xG41zzIqwWEpBC8eNVEaLHKvUkDb9XVwNk" },
+            { number: 37, title: "Episodio 37", megaId: "nt40DIBK", megaKey: "W0EthEk4F37SM9GFUYuItx5H6OgaxpSvpIyvXkQejWs" },
+            { number: 38, title: "Episodio 38", megaId: "S5x22KpD", megaKey: "WlRcHXk4e__obh8lNHT_ww2UBGV_g00irSDTtgdR9xU" },
+            { number: 39, title: "Episodio 39", megaId: "z9xAnQxL", megaKey: "L9liWBqnwtXq_diJhmesamTLkRZ8DPg3qtVfUICtP_M" },
+            { number: 40, title: "Episodio 40", megaId: "794CHYiJ", megaKey: "S1g4kAhFnLUxMwIG8dE1zVUT8fk1jdjXV2siAsHcr_Y" },
+            { number: 41, title: "Episodio 41", megaId: "z04QSIBQ", megaKey: "ewYgHSCtSOgT3LlS-v1sGGi_t01rxDTXOHeWIeTsLoA" },
+            { number: 42, title: "Episodio 42", megaId: "G55ynaLB", megaKey: "IRS__15YADcs8KDYeMvUsBSz7BwtLBEEFKmEXhPe3UU" },
+            { number: 43, title: "Episodio 43", megaId: "z9gixSpJ", megaKey: "aU3EcH2scfvE93U0GAWwcF8cb4lEnS3n8vaeMBSdy70" },
+            { number: 44, title: "Episodio 44", megaId: "ixhgWIbb", megaKey: "HrUwYgc13CyjqfA36oM34yLQ05ksEhrV09UzyN95EY0" },
+            { number: 45, title: "Episodio 45", megaId: "2hximCKT", megaKey: "DG5tYhNBf4JbXmmd1Rx2xQQ1H91X7eiyG11ITusvkjU" },
+            { number: 46, title: "Episodio 46", megaId: "O8pyTabC", megaKey: "U4PPQ30SV7D4x-cCAz33VmBWVBQ4hdbz3lVdfTHVxXs" },
+            { number: 47, title: "Episodio 47", megaId: "y8wSgAKR", megaKey: "ERFSXS9JXAMZN4gy66-liTyqKBsC51dVfOj5mIwq8o4" },
+            { number: 48, title: "Episodio 48", megaId: "jg523QSC", megaKey: "KQYKuyVe2gaHwB3CP8DHtEjtwgBMLzKPilUzc0_3QKM" },
+            { number: 49, title: "Episodio 49", megaId: "z85GRCaK", megaKey: "CY_oVAAittqafBXidNFYnEzY1QVnwFs-3c05M1Uo1Vw" },
+            { number: 50, title: "Episodio 50", megaId: "7ooi0IzL", megaKey: "LU1_wUqwFnVQ26M9TPrjLyDIp_pxNEmuaTeagm7ENYY" },
+            { number: 51, title: "Episodio 51", megaId: "644mVAbb", megaKey: "QgtVIHMaleRAcRffepdq93wvwXBnzZ_pEX_UsENKjhc" },
+            { number: 52, title: "Episodio 52", megaId: "f4p2BCxQ", megaKey: "cn5gQS8PpY4DF2zEqw13VxyRliUw8FfyCm5ZLoLDoJ0" },
+            { number: 53, title: "Episodio 53", megaId: "e1gwmQxb", megaKey: "VJfGEWlrPG9dcZbPnxG3GFzfOMsDRRCxZQ8ktMEZ3X4" },
+            { number: 54, title: "Episodio 54", megaId: "XgoQyIBZ", megaKey: "EjbdVkR488XOIBgJcZlXPgw5HGxbVbvZtUNi8BEcJZQ" },
+            { number: 55, title: "Episodio 55", megaId: "2pokGa6a", megaKey: "bihCj1N3-szYAy3XP6WT8kfTacUnyhTskFVzbC-6LIE" },
+            { number: 56, title: "Episodio 56", megaId: "atpyjAwY", megaKey: "TZtSAFckzuWwdbE234SuI22ouAA9xqIEhg6cdtl4hnc" },
+            { number: 57, title: "Episodio 57", megaId: "Wtwi2Ywa", megaKey: "XkOu6lOM5Rqs_KipRX7uqGDt4M4TubQO6eq2NDozv0w" },
+            { number: 58, title: "Episodio 58", megaId: "7woGGYZR", megaKey: "ND8ZKFDXhlFNQWnchzzxOR293MUcq3luZP-uhaJ8U5k" },
+            { number: 59, title: "Episodio 59", megaId: "6o4UAaDY", megaKey: "LksRIli8UPyQQF6emjQ3Dhre41pzQdEfxWJ9obn73n8" },
+            { number: 60, title: "Episodio 60", megaId: "uhwgkC6R", megaKey: "K7obvQAtWheEeEYDQWJJVz2HEzpeQ-XPyYO20DbLXcQ" },
+            { number: 61, title: "Episodio 61", megaId: "Tt4ykKZC", megaKey: "YlM2XVNMB3vvHlHlew95dTEc5vsdAjgFg0MtXDK25ac" },
+            { number: 62, title: "Episodio 62", megaId: "ykgyECCY", megaKey: "ET5EEUPfSMYzlIZzHonRIGB9aCBxt_9jagV-30rfZbc" },
+            { number: 63, title: "Episodio 63", megaId: "HphE0CaT", megaKey: "ciXk41kphJiIRaCkDwJBYFYSMvUqV4yzxOpDKQvGE2E" },
+            { number: 64, title: "Episodio 64", megaId: "nlpiwarD", megaKey: "Ix0BOWAL8B7VPufN00oG-mbpbf1c_x-rzpdtRLmwalY" },
+            { number: 65, title: "Episodio 65", megaId: "2poASSBY", megaKey: "AyDvKiF7OJnizZvNrRq672YAS2Qebha2yqcHVuiLzQk" },
+            { number: 66, title: "Episodio 66", megaId: "ykgGiKrD", megaKey: "hhyzhm9ZGx5oWeHEZlOUHdwSffdbBlVtKTMDO1UIYhA" },
+            { number: 67, title: "Episodio 67", megaId: "SohyWKCZ", megaKey: "_5w5IzTNeWCJhU-fSyyMZ5aKy_cS5miacghzoF70nWI" },
+            { number: 68, title: "Episodio 68", megaId: "mlxQwIiI", megaKey: "8lbu6VwUbVGmTkNdACy4IAKXtjZlry6ncuahHoGWxTM" },
+            { number: 69, title: "Episodio 69", megaId: "OwhmXYpK", megaKey: "FgHvu38Be0KggtwUpmoHnV476lUm9pM5sktWApJGMAM" },
+            { number: 70, title: "Episodio 70", megaId: "6s5kxQoL", megaKey: "L7JsiklZgXmvWwcFSD_dPEhl1_1DHtm2_l8e1SlZGBs" },
+            { number: 71, title: "Episodio 71", megaId: "KphiiQTZ", megaKey: "IaSjSwm0EZMQX6t5ESCkREhyvZdnZGZ6HBYbBhWugAk" },
+            { number: 72, title: "Episodio 72", megaId: "C45wEa4S", megaKey: "YBORbzdzWhA2NK_8darXy2-7t40EEaZZKSwyjVzoyZI" },
+            { number: 73, title: "Episodio 73", megaId: "2oxUXCDQ", megaKey: "B79cizDB8LF9tW_OV7zxiylYMhlKNf6iKDxCwTYHpg8" },
+            { number: 74, title: "Episodio 74", megaId: "esxCWCRT", megaKey: "EwfJpV1798hsEbcRYq3qdQqEoftClPx8TgxnZVJXjNE" },
+            { number: 75, title: "Episodio 75", megaId: "794SmKSQ", megaKey: "Eq5coWH8WR7grzmC_Q8ItH3qpCpwbPQKzUpGpoqVOCg" },
+            { number: 76, title: "Episodio 76", megaId: "H1xGnIDS", megaKey: "BfH66SaJSGTyWGRhtZjQ32cv1ap523449ZWVhtAJPvQ" },
           ]
         },
       ]
